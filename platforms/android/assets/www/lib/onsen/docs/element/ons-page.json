@@ -1,0 +1,237 @@
+{
+  "name": "ons-page",
+  "path": "core/src/elements/ons-page.js",
+  "category": "page",
+  "description": "[en]\n  This component defines the root of each page. If the content is large it will become scrollable.\n  A navigation bar can be added to the top of the page using the `<ons-toolbar>` element.\n[/en]\n[ja]ページ定義のためのコンポーネントです。このコンポーネントの内容はスクロールが許可されます。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/page",
+  "examples": [
+    "\n<ons-page>\n  <ons-toolbar>\n    <div class=\"left\">\n      <ons-back-button>Back</ons-back-button>\n    </div>\n    <div class=\"center\">Title</div>\n    <div class=\"right\">\n      <ons-toolbar-button>\n        <ons-icon icon=\"md-menu\"></ons-icon>\n      </ons-toolbar-button>\n    </div>\n  </ons-toolbar>\n  <p>Page content</p>\n</ons-page>",
+    "\n<script>\n  myApp.handler = function(done) {\n    loadMore().then(done);\n  }\n</script>\n<ons-page on-infinite-scroll=\"myApp.handler\">\n  <ons-toolbar>\n    <div class=\"center\">List</div>\n  </ons-toolbar>\n  <ons-list>\n    <ons-list-item>#1</ons-list-item>\n    <ons-list-item>#2</ons-list-item>\n    <ons-list-item>#3</ons-list-item>\n    ...\n  </ons-list>\n</ons-page>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-toolbar",
+      "description": "[en]Use the `<ons-toolbar>` element to add a navigation bar to the top of the page.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "lifecycle.html#events",
+      "description": "[en]Overview of page events[/en]\n   [ja]Overview of page events[/ja]"
+    },
+    {
+      "name": "fundamentals.html#managing-pages",
+      "description": "[en]Managing multiple pages[/en]\n   [ja]複数のページを管理する[/ja]"
+    },
+    {
+      "name": "theming.html#modifiers",
+      "description": "[en]More details about the `modifier` attribute[/en][ja]modifier属性の使い方[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Material Design style[/en]\n   [ja][/ja]"
+    }
+  ],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]Specify modifier name to specify custom styles.[/en]\n[ja]スタイル定義をカスタマイズするための名前を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "on-infinite-scroll",
+      "type": "String",
+      "description": "\n[en]Path of the function to be executed on infinite scrolling. Example: `app.loadData`. The function receives a done callback that must be called when it's finished.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this page.[/en]\n[ja]このページを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ng-infinite-scroll",
+      "type": "String",
+      "description": "\n[en]Path of the function to be executed on infinite scrolling. The path is relative to $scope. The function receives a done callback that must be called when it's finished.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "on-device-back-button",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the back button is pressed.[/en]\n[ja]デバイスのバックボタンが押された時の挙動を設定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "ng-device-back-button",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior with an AngularJS expression when the back button is pressed.[/en]\n[ja]デバイスのバックボタンが押された時の挙動を設定できます。AngularJSのexpressionを指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-init",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"init\" event is fired.[/en]\n[ja]\"init\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-show",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"show\" event is fired.[/en]\n[ja]\"show\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-hide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"hide\" event is fired.[/en]\n[ja]\"hide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-destroy",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"destroy\" event is fired.[/en]\n[ja]\"destroy\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [
+    {
+      "name": "init",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        }
+      ],
+      "description": "\n[en]Fired right after the page is attached.[/en]\n[ja]ページがアタッチされた後に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "show",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        }
+      ],
+      "description": "\n[en]Fired right after the page is shown.[/en]\n[ja]ページが表示された後に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "hide",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        }
+      ],
+      "description": "\n[en]Fired right after the page is hidden.[/en]\n[ja]ページが隠れた後に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "destroy",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        }
+      ],
+      "description": "\n[en]Fired right before the page is destroyed.[/en]\n[ja]ページが破棄される前に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "onInfiniteScroll",
+      "type": null,
+      "description": "\n[en]Function to be executed when scrolling to the bottom of the page. The function receives a done callback as an argument that must be called when it's finished.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "onDeviceBackButton",
+      "type": "Object",
+      "description": "\n[en]Back-button handler.[/en]\n[ja]バックボタンハンドラ。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "data",
+      "type": "*",
+      "description": "\n[en]User's custom data passed to `pushPage()`-like methods.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [],
+  "elements": [
+    {
+      "name": "ons-page",
+      "path": "bindings/angular1/directives/page.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

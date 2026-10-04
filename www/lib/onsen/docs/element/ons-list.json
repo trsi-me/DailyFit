@@ -1,0 +1,59 @@
+{
+  "name": "ons-list",
+  "path": "core/src/elements/ons-list.js",
+  "category": "list",
+  "description": "[en]Component to define a list, and the container for ons-list-item(s).[/en]\n[ja]リストを表現するためのコンポーネント。ons-list-itemのコンテナとして使用します。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/list",
+  "examples": [
+    "\n<ons-list>\n  <ons-list-header>Header Text</ons-list-header>\n  <ons-list-item>Item</ons-list-item>\n  <ons-list-item>Item</ons-list-item>\n</ons-list>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-list-item",
+      "description": "[en]ons-list-item component[/en]\n   [ja]ons-list-itemコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-list-header",
+      "description": "[en]ons-list-header component[/en]\n   [ja]ons-list-headerコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-lazy-repeat",
+      "description": "[en]ons-lazy-repeat component[/en]\n   [ja]ons-lazy-repeatコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "inset",
+      "description": "[en]Inset list that doesn't cover the whole width of the parent.[/en]\n   [ja]親要素の画面いっぱいに広がらないリストを表示します。[/ja]"
+    },
+    {
+      "name": "noborder",
+      "description": "[en]A list with no borders at the top and bottom.[/en]\n   [ja]リストの上下のボーダーが無いリストを表示します。[/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "yxcCt"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the list.[/en]\n[ja]リストの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

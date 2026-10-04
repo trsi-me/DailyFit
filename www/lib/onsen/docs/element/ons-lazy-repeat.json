@@ -1,0 +1,145 @@
+{
+  "name": "ons-lazy-repeat",
+  "path": "core/src/elements/ons-lazy-repeat.js",
+  "category": "list",
+  "description": "[en]\n  Using this component a list with millions of items can be rendered without a drop in performance.\n  It does that by \"lazily\" loading elements into the DOM when they come into view and\n  removing items from the DOM when they are not visible.\n[/en]\n[ja]\n  このコンポーネント内で描画されるアイテムのDOM要素の読み込みは、画面に見えそうになった時まで自動的に遅延され、\n  画面から見えなくなった場合にはその要素は動的にアンロードされます。\n  このコンポーネントを使うことで、パフォーマンスを劣化させること無しに巨大な数の要素を描画できます。\n[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/lazy-repeat",
+  "examples": [
+    "\n<script>\n  window.addEventListener('load', function() {\n    var lazyRepeat = document.querySelector('#list');\n    lazyRepeat.delegate = {\n     createItemContent: function(i, template) {\n       var dom = template.cloneNode(true);\n       dom.innerText = i;\n       return dom;\n     },\n     countItems: function() {\n       return 10000000;\n     },\n     destroyItem: function(index, item) {\n       console.log('Destroyed item with index: ' + index);\n     }\n    };\n  });\n</script>\n<ons-list id=\"list\">\n  <ons-lazy-repeat>\n    <ons-list-item></ons-list-item>\n  </ons-lazy-repeat>\n</ons-list>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-list",
+      "description": "[en]The `<ons-list>` element is used to render a list.[/en]\n   [ja]`<ons-list>`要素はリストを描画するのに使われます。[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "QwrGBm"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "ons-lazy-repeat",
+      "type": "Expression",
+      "description": "\n[en]A delegate object, can be either an object attached to the scope (when using AngularJS) or a normal JavaScript variable.[/en]\n[ja]要素のロード、アンロードなどの処理を委譲するオブジェクトを指定します。AngularJSのスコープの変数名や、通常のJavaScriptの変数名を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "delegate",
+      "type": "Object",
+      "description": "\n[en]Specify a delegate object to load and unload item elements.[/en]\n[ja]要素のロード、アンロードなどの処理を委譲するオブジェクトを指定します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "delegate.createItemContent",
+      "type": "Function",
+      "description": "\n[en]\n  This function should return a `HTMLElement`.\n  To help rendering the element, the current index and a template is supplied as arguments. The template is the initial content of the `<ons-lazy-repeat>` element.\n[/en]\n[ja]\n  この関数は`HTMLElement`を返してください。\n  要素を生成しやすくするために、現在のアイテムのインデックスとテンプレートが引数に渡されます。\n  このテンプレートは、`<ons-lazy-repeat>`要素のコンテンツが渡されます。\n[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "delegate.countItems",
+      "type": "Function",
+      "description": "\n[en]Should return the number of items in the list.[/en]\n[ja]リスト内のアイテム数を返してください。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "delegate.calculateItemHeight",
+      "type": "Function",
+      "description": "\n[en]\n  Should return the height of an item. The index is provided as an argument.\n  This is important when rendering lists where the items have different height.\n  The function is optional and if it isn't present the height of the first item will be automatically calculated and used for all other items.\n[/en]\n[ja]\n  アイテムの高さ(ピクセル)を返してください。アイテムのインデックス値は引数で渡されます。\n  この関数は、それぞれのアイムが違った高さを持つリストをレンダリングする際に重要です。\n  この関数はオプショナルです。もしこの関数が無い場合には、\n  最初のアイテムの高さが他のすべてのアイテムの高さとして利用されます。\n[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "delegate.destroyItem",
+      "type": "Function",
+      "description": "\n[en]\n  This function is used called when an item is removed from the DOM. The index and DOM element is provided as arguments.\n  The function is optional but may be important in order to avoid memory leaks.\n[/en]\n[ja]\n  この関数は、あるアイテムがDOMツリーから除かれた時に呼び出されます。\n  アイテムのインデックス値とDOM要素が引数として渡されます。\n  この関数はオプショナルですが、各アイテムの後処理が必要な場合にはメモリーリークを避けるために重要です。\n[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "delegate.configureItemScope",
+      "type": "Function",
+      "description": "\n[en]Function which recieves an index and the scope for the item. Can be used to configure values in the item scope.[/en]\n[ja][/ja]",
+      "extensionOf": "angular1",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "refresh",
+      "params": [],
+      "returns": null,
+      "signature": "refresh()",
+      "description": "\n[en]Refresh the list. Use this method when the data has changed.[/en]\n[ja]リストを更新します。もしデータが変わった場合にはこのメソッドを使ってください。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-lazy-repeat",
+      "path": "bindings/angular1/directives/lazyRepeat.js",
+      "description": "[en]\n  Using this component a list with millions of items can be rendered without a drop in performance.\n  It does that by \"lazily\" loading elements into the DOM when they come into view and\n  removing items from the DOM when they are not visible.\n[/en]\n[ja]\n  このコンポーネント内で描画されるアイテムのDOM要素の読み込みは、画面に見えそうになった時まで自動的に遅延され、\n  画面から見えなくなった場合にはその要素は動的にアンロードされます。\n  このコンポーネントを使うことで、パフォーマンスを劣化させること無しに巨大な数の要素を描画できます。\n[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [
+        "\n<script>\n  ons.bootstrap()\n  .controller('MyController', function($scope) {\n    $scope.MyDelegate = {\n      countItems: function() {\n        // Return number of items.\n        return 1000000;\n      },\n      calculateItemHeight: function(index) {\n        // Return the height of an item in pixels.\n        return 45;\n      },\n      configureItemScope: function(index, itemScope) {\n        // Initialize scope\n        itemScope.item = 'Item #' + (index + 1);\n      },\n      destroyItemScope: function(index, itemScope) {\n        // Optional method that is called when an item is unloaded.\n        console.log('Destroyed item with index: ' + index);\n      }\n    };\n  });\n</script>\n<ons-list ng-controller=\"MyController\">\n  <ons-list-item ons-lazy-repeat=\"MyDelegate\">\n    {{ item }}\n  </ons-list-item>\n</ons-list>"
+      ],
+      "seealsos": [],
+      "guides": [
+        {
+          "name": "UsingLazyRepeat",
+          "description": "[en]How to use Lazy Repeat[/en]\n   [ja]レイジーリピートの使い方[/ja]"
+        }
+      ],
+      "codepens": [
+        {
+          "isWide": false,
+          "id": "QwrGBm"
+        }
+      ]
+    },
+    {
+      "name": "ons-lazy-repeat",
+      "path": "bindings/angular2/src/directives/ons-lazy-repeat.ts",
+      "description": "[en]Angular directive for `<ons-lazy-repeat>` component.[/en]\n[ja]`<ons-lazy-repeat>`要素と同じ機能を提供するAngularディレクティブです。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular2",
+      "overwrite": "",
+      "directive": "OnsLazyRepeat",
+      "selector": "[ons-lazy-repeat]",
+      "examples": [
+        "\n<ons-list>\n  <ons-list-item *onsLazyRepeat=\"let item of items; let i = index\">\n    #{{i}} {{item.msg}}\n  </ons-list-item>\n</ons-list>"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [
+    {
+      "name": "onsLazyRepeat",
+      "description": "\n[en]Render infinite lists with \"let of\" syntax in Angular.[/en]\n[ja]let of式を指定します。[/ja]",
+      "type": "",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    }
+  ],
+  "outputs": []
+}

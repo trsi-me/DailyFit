@@ -1,0 +1,46 @@
+{
+  "name": "ons-if",
+  "path": "core/src/elements/ons-if.js",
+  "category": "conditional",
+  "description": "[en]\n  Conditionally display content depending on the platform, device orientation or both.\n  Sometimes it is useful to conditionally hide or show certain components based on platform. When running on iOS the `<ons-if>` element can be used to hide the `<ons-fab>` element.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/if",
+  "examples": [
+    "\n<ons-page>\n  <ons-if orientation=\"landscape\">\n    Landscape view!\n  </ons-if>\n  <ons-if platform=\"android\">\n    This is Android.\n  </ons-if>\n  <ons-if platform=\"ios other\">\n    This is not Android.\n  </ons-if>\n</ons-page>"
+  ],
+  "seealsos": [],
+  "guides": [
+    {
+      "name": "theming.html#cross-platform-styling-autostyling",
+      "description": "[en]Information about cross platform styling[/en][ja]Information about cross platform styling[/ja]"
+    }
+  ],
+  "modifiers": [],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "platform",
+      "type": "string",
+      "description": "\n[en]Space-separated platform names. Possible values are `\"ios\"`, `\"android\"`, `\"windows\"` and `\"other\"`.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "orientation",
+      "type": "string",
+      "description": "\n[en]Either `\"portrait\"` or `\"landscape\"`.[/en]\n[ja]portraitもしくはlandscapeを指定します[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

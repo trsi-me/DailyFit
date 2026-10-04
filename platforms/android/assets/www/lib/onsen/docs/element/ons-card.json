@@ -1,0 +1,37 @@
+{
+  "name": "ons-card",
+  "path": "core/src/elements/ons-card.js",
+  "category": "visual",
+  "description": "[en]\n Component to create a card that displays some information.\n The card may be composed by divs with specially prepared classes `title` and/or `content`. You can also add your own content as you please.[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/card",
+  "examples": [
+    "\n<ons-card>\n  <p>Some content</p>\n</ons-card>"
+  ],
+  "seealsos": [],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]A card with material design.[/en]\n   [ja]リストの上下のボーダーが無いリストを表示します。[/ja]"
+    }
+  ],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the card.[/en]\n[ja]リストの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

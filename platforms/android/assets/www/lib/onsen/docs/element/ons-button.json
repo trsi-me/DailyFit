@@ -1,0 +1,122 @@
+{
+  "name": "ons-button",
+  "path": "core/src/elements/ons-button.js",
+  "category": "form",
+  "description": "[en]\n  Button component. If you want to place a button in a toolbar, use `<ons-toolbar-button>` or `<ons-back-button>` instead.\n  Will automatically display as a Material Design button with a ripple effect on Android.\n[/en]\n[ja]ボタン用コンポーネント。ツールバーにボタンを設置する場合は、ons-toolbar-buttonもしくはons-back-buttonコンポーネントを使用します。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/button",
+  "examples": [
+    "\n<ons-button modifier=\"large--cta\">\n  Tap Me\n</ons-button>"
+  ],
+  "seealsos": [],
+  "guides": [
+    {
+      "name": "theming.html#modifiers",
+      "description": "[en]More details about the `modifier` attribute[/en][ja]modifier属性の使い方[/ja]"
+    },
+    {
+      "name": "theming.html#cross-platform-styling-autostyling",
+      "description": "[en]Information about cross platform styling[/en][ja]Information about cross platform styling[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "outline",
+      "description": "[en]Button with outline and transparent background[/en]\n   [ja]アウトラインを持ったボタンを表示します。[/ja]"
+    },
+    {
+      "name": "light",
+      "description": "[en]Button that doesn't stand out.[/en]\n   [ja]目立たないボタンを表示します。[/ja]"
+    },
+    {
+      "name": "quiet",
+      "description": "[en]Button with no outline and or background..[/en]\n   [ja]枠線や背景が無い文字だけのボタンを表示します。[/ja]"
+    },
+    {
+      "name": "cta",
+      "description": "[en]Button that really stands out.[/en]\n   [ja]目立つボタンを表示します。[/ja]"
+    },
+    {
+      "name": "large",
+      "description": "[en]Large button that covers the width of the screen.[/en]\n   [ja]横いっぱいに広がる大きなボタンを表示します。[/ja]"
+    },
+    {
+      "name": "large--quiet",
+      "description": "[en]Large quiet button.[/en]\n   [ja]横いっぱいに広がるquietボタンを表示します。[/ja]"
+    },
+    {
+      "name": "large--cta",
+      "description": "[en]Large call to action button.[/en]\n   [ja]横いっぱいに広がるctaボタンを表示します。[/ja]"
+    },
+    {
+      "name": "material",
+      "description": "[en]Material Design button[/en]\n   [ja]マテリアルデザインのボタン[/ja]"
+    },
+    {
+      "name": "material--flat",
+      "description": "[en]Material Design flat button[/en]\n   [ja]マテリアルデザインのフラットボタン[/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "hLayx"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the button.[/en]\n[ja]ボタンの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "ripple",
+      "type": null,
+      "description": "\n[en]If this attribute is defined, the button will have a ripple effect.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]Specify if button should be disabled.[/en]\n[ja]ボタンを無効化する場合は指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the button is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [],
+  "elements": [
+    {
+      "name": "ons-button",
+      "path": "bindings/angular1/directives/button.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

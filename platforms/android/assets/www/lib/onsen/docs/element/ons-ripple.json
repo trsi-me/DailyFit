@@ -1,0 +1,101 @@
+{
+  "name": "ons-ripple",
+  "path": "core/src/elements/ons-ripple/index.js",
+  "category": "visual",
+  "description": "[en]\n  Adds a Material Design \"ripple\" effect to an element. The ripple effect will spread from the position where the user taps.\n  Some elements such as `<ons-button>` and `<ons-fab>`  support a `ripple` attribute.\n[/en]\n[ja]マテリアルデザインのリップル効果をDOM要素に追加します。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/ripple",
+  "examples": [
+    "\n<div class=\"my-div\">\n <ons-ripple></ons-ripple>\n</div>",
+    "\n<ons-button ripple>Click me!</ons-button>"
+  ],
+  "seealsos": [],
+  "guides": [
+    {
+      "name": "theming.html#cross-platform-styling-autostyling",
+      "description": "[en]Cross platform styling[/en]\n  [ja]Cross platform styling[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "light-gray",
+      "description": "[en]Change the color of effects to light gray.[/en]\n   [ja]エフェクトの色が明るい灰色になります。[/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "wKQWdZ"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "color",
+      "type": "String",
+      "description": "\n[en]Color of the ripple effect.[/en]\n[ja]リップルエフェクトの色を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the ripple effect.[/en]\n[ja]エフェクトの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "background",
+      "type": "String",
+      "description": "\n[en]Color of the background.[/en]\n[ja]背景の色を設定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "size",
+      "type": "String",
+      "description": "\n[en]Sizing of the wave on ripple effect. Set \"cover\" or \"contain\". Default is \"cover\".[/en]\n[ja]エフェクトのサイズを指定します。\"cover\"もしくは\"contain\"を指定します。デフォルトは\"cover\"です。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "center",
+      "type": "Boolean",
+      "description": "\n[en]If this attribute presents, change the position of wave effect to center of the target element.[/en]\n[ja]この要素を設定すると、エフェクトの位置が要素の真ん中から始まります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]If this attribute is set, the ripple effect will be disabled.[/en]\n[ja]この属性が設定された場合、リップルエフェクトは無効になります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

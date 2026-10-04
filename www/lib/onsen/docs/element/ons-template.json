@@ -1,0 +1,42 @@
+{
+  "name": "ons-template",
+  "path": "core/src/elements/ons-template.js",
+  "category": "util",
+  "description": "[en]\n  Define a separate HTML fragment and use as a template. These templates can be loaded as pages in `<ons-navigator>`, `<ons-tabbar>` and `<ons-splitter>`. They can also be used to generate dialogs. Since Onsen UI 2.4.0, the native `<template>` element can be used instead of `<ons-template>` for better performance and features. `<ons-template>` is still supported for backward compatibility.\n[/en]\n[ja]テンプレートとして使用するためのHTMLフラグメントを定義します。この要素でHTMLを宣言すると、id属性に指定した名前をpageのURLとしてons-navigatorなどのコンポーネントから参照できます。[/ja]",
+  "deprecated": false,
+  "examples": [
+    "\n<ons-template id=\"foobar.html\">\n  <ons-page>\n    Page content\n  </ons-page>\n</ons-template>\n<ons-navigator page=\"foobar.html\"></ons-navigator>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-navigator",
+      "description": "[en]The `<ons-navigator>` component enables stack based navigation.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "ons-tabbar",
+      "description": "[en]The `<ons-tabbar>` component is used to add tab navigation.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "ons-splitter",
+      "description": "[en]The `<ons-splitter>` component can be used to create a draggable menu or column based layout.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [],
+  "attributes": [],
+  "events": [],
+  "properties": [
+    {
+      "name": "template",
+      "type": "String",
+      "description": "\n[en]Template content. This property can not be used with AngularJS bindings.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

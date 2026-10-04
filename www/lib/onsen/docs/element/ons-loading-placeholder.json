@@ -1,0 +1,33 @@
+{
+  "name": "ons-loading-placeholder",
+  "path": "bindings/angular1/directives/loadingPlaceholder.js",
+  "category": "util",
+  "description": "[en]Display a placeholder while the content is loading.[/en]\n[ja]Onsen UIが読み込まれるまでに表示するプレースホルダーを表現します。[/ja]",
+  "deprecated": false,
+  "extensionOf": "angular1",
+  "examples": [
+    "\n<div ons-loading-placeholder=\"page.html\">\n  Loading...\n</div>"
+  ],
+  "seealsos": [],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "ons-loading-placeholder",
+      "type": "String",
+      "description": "\n[en]The url of the page to load.[/en]\n[ja]読み込むページのURLを指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

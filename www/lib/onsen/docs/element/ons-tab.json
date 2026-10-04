@@ -1,0 +1,108 @@
+{
+  "name": "ons-tab",
+  "path": "core/src/elements/ons-tab.js",
+  "category": "tabbar",
+  "description": "[en]Represents a tab inside tab bar. Each `<ons-tab>` represents a page.[/en]\n[ja]\n  タブバーに配置される各アイテムのコンポーネントです。それぞれのons-tabはページを表します。\n  ons-tab要素の中には、タブに表示されるコンテンツを直接記述することが出来ます。\n[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/tabbar",
+  "examples": [
+    "\n<ons-tabbar>\n  <ons-tab\n    page=\"home.html\"\n    label=\"Home\"\n    active>\n  </ons-tab>\n  <ons-tab\n    page=\"settings.html\"\n    label=\"Settings\"\n    active>\n  </ons-tab>\n</ons-tabbar>\n<template id=\"home.html\">\n  ...\n</template>\n<template id=\"settings.html\">\n  ...\n</template>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-tabbar",
+      "description": "[en]ons-tabbar component[/en]\n   [ja]ons-tabbarコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-page",
+      "description": "[en]ons-page component[/en]\n   [ja]ons-pageコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-icon",
+      "description": "[en]ons-icon component[/en]\n   [ja]ons-iconコンポーネント[/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "fundamentals.html#managing-pages",
+      "description": "[en]Managing multiple pages.[/en]\n   [ja]複数のページを管理する[/ja]]"
+    },
+    {
+      "name": "appsize.html#removing-icon-packs",
+      "description": "[en]Removing icon packs.[/en][ja][/ja]"
+    },
+    {
+      "name": "faq.html#how-can-i-use-custom-icon-packs",
+      "description": "[en]Adding custom icon packs.[/en][ja][/ja]"
+    }
+  ],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "pGuDL"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "page",
+      "type": "String",
+      "description": "\n[en]The page that is displayed when the tab is tapped.[/en]\n[ja]ons-tabが参照するページへのURLを指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "icon",
+      "type": "String",
+      "description": "\n[en]\n  The icon name for the tab. Can specify the same icon name as `<ons-icon>`. Check [See also](#seealso) section for more information.\n[/en]\n[ja]\n  アイコン名を指定します。ons-iconと同じアイコン名を指定できます。\n  個別にアイコンをカスタマイズする場合は、background-imageなどのCSSスタイルを用いて指定できます。\n[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "active-icon",
+      "type": "String",
+      "description": "\n[en]The name of the icon when the tab is active.[/en]\n[ja]アクティブの際のアイコン名を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "label",
+      "type": "String",
+      "description": "\n[en]The label of the tab item.[/en]\n[ja]アイコン下に表示されるラベルを指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "badge",
+      "type": "String",
+      "description": "\n[en]Display a notification badge on top of the tab.[/en]\n[ja]バッジに表示する内容を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "active",
+      "type": null,
+      "description": "\n[en]This attribute should be set to the tab that is active by default.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

@@ -1,0 +1,45 @@
+{
+  "name": "ons-bottom-toolbar",
+  "path": "core/src/elements/ons-bottom-toolbar.js",
+  "category": "page",
+  "description": "[en]Toolbar component that is positioned at the bottom of the page. Since bottom toolbars are very versatile elements, `ons-bottom-toolbar` does not provide any specific layout syntax for its children. Modifiers or custom CSS must be used.[/en]\n[ja]ページ下部に配置されるツールバー用コンポーネントです。[/ja]",
+  "deprecated": false,
+  "examples": [
+    "\n<ons-bottom-toolbar>\n  Content\n</ons-bottom-toolbar>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-toolbar",
+      "description": "[en]ons-toolbar component[/en][ja]ons-toolbarコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "transparent",
+      "description": "[en]Make the toolbar transparent.[/en]\n   [ja]ツールバーの背景を透明にして表示します。[/ja]"
+    },
+    {
+      "name": "aligned",
+      "description": "[en]Vertically aligns its children and applies flexbox for block elements. `justify-content` CSS rule can be used to change horizontal align.[/en]\n   [ja]ツールバーの背景を透明にして表示します。[/ja]"
+    }
+  ],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the toolbar.[/en]\n[ja]ツールバーの見た目の表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

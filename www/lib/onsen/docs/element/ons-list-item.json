@@ -1,0 +1,129 @@
+{
+  "name": "ons-list-item",
+  "path": "core/src/elements/ons-list-item/index.js",
+  "category": "list",
+  "description": "[en]\n  Component that represents each item in a list. The list item is composed of four parts that are represented with the `left`, `center`, `right` and `expandable-content` classes. These classes can be used to ensure that the content of the list items is properly aligned.\n  ```\n  <ons-list-item>\n    <div class=\"left\">Left</div>\n    <div class=\"center\">Center</div>\n    <div class=\"right\">Right</div>\n    <div class=\"expandable-content\">Expandable content</div>\n  </ons-list-item>\n  ```\n  There are also a number of classes (prefixed with `list-item__*`) that help when putting things like icons and thumbnails into the list items.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/list",
+  "examples": [
+    "\n<ons-list-item>\n  <div class=\"left\">\n    <ons-icon icon=\"md-face\" class=\"list-item__icon\"></ons-icon>\n  </div>\n  <div class=\"center\">\n    <div class=\"list-item__title\">Title</div>\n    <div class=\"list-item__subtitle\">Subtitle</div>\n  </div>\n  <div class=\"right\">\n    <ons-switch></ons-switch>\n  </div>\n</ons-list-item>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-list",
+      "description": "[en]ons-list component[/en]\n   [ja]ons-listコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-list-header",
+      "description": "[en]ons-list-header component[/en]\n   [ja]ons-list-headerコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "tappable",
+      "description": "[en]Make the list item change appearance when it's tapped. On iOS it is better to use the \"tappable\" and \"tap-background-color\" attribute for better behavior when scrolling.[/en]\n   [ja]タップやクリックした時に効果が表示されるようになります。[/ja]"
+    },
+    {
+      "name": "chevron",
+      "description": "[en]Display a chevron at the right end of the list item and make it change appearance when tapped.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "longdivider",
+      "description": "[en]Displays a long horizontal divider between items.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "nodivider",
+      "description": "[en]Removes the divider between list items.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "material",
+      "description": "[en]Display a Material Design list item.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "yxcCt"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the list item.[/en]\n[ja]各要素の表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "lock-on-drag",
+      "type": "String",
+      "description": "\n[en]Prevent vertical scrolling when the user drags horizontally.[/en]\n[ja]この属性があると、ユーザーがこの要素を横方向にドラッグしている時に、縦方向のスクロールが起きないようになります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "tappable",
+      "type": "Boolean",
+      "description": "\n[en]Makes the element react to taps. `prevent-tap` attribute can be added to child elements like buttons or inputs to prevent this effect. `ons-*` elements are ignored by default.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "tap-background-color",
+      "type": "Color",
+      "description": "\n[en] Changes the background color when tapped. For this to work, the attribute \"tappable\" needs to be set. The default color is \"#d9d9d9\". It will display as a ripple effect on Android.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "expandable",
+      "type": "Boolean",
+      "description": "\n[en]Makes the element able to be expanded to reveal extra content. For this to work, the expandable content must be defined in `div.expandable-content`.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "animation",
+      "type": "String",
+      "description": "\n[en]The animation used when showing and hiding the expandable content. Can be either `\"default\"` or `\"none\"`.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "default",
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [
+    {
+      "name": "showExpansion",
+      "params": [],
+      "returns": null,
+      "signature": "showExpansion()",
+      "description": "\n[en]Show the expandable content if the element is expandable.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "hideExpansion",
+      "params": [],
+      "returns": null,
+      "signature": "hideExpansion()",
+      "description": "\n[en]Hide the expandable content if the element expandable.[/en]\n[ja][/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

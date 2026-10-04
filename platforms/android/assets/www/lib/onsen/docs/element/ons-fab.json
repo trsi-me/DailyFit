@@ -1,0 +1,135 @@
+{
+  "name": "ons-fab",
+  "path": "core/src/elements/ons-fab.js",
+  "category": "form",
+  "description": "[en]\n  The Floating action button is a circular button defined in the [Material Design specification](https://www.google.com/design/spec/components/buttons-floating-action-button.html). They are often used to promote the primary action of the app.\n  It can be displayed either as an inline element or in one of the corners. Normally it will be positioned in the lower right corner of the screen.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/fab",
+  "examples": [],
+  "seealsos": [
+    {
+      "name": "ons-speed-dial",
+      "description": "[en]The `<ons-speed-dial>` component is a Floating action button that displays a menu when tapped.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "theming.html#cross-platform-styling-autostyling",
+      "description": "[en]Information about cross platform styling[/en][ja]Information about cross platform styling[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "mini",
+      "description": "[en]Makes the `ons-fab` smaller.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the button.[/en]\n[ja]ボタンの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "ripple",
+      "type": null,
+      "description": "\n[en]If this attribute is defined, the button will have a ripple effect when tapped.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "position",
+      "type": "String",
+      "description": "\n[en]The position of the button. Should be a string like `\"bottom right\"` or `\"top left\"`. If this attribute is not defined it will be displayed as an inline element.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]Specify if button should be disabled.[/en]\n[ja]ボタンを無効化する場合は指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer the floating action button.[/en]\n[ja]このフローティングアクションボタンを参照するための変数名をしてします。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "visible",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is visible or not.[/en]\n[ja]要素が見える場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "show",
+      "params": [],
+      "returns": null,
+      "signature": "show()",
+      "description": "\n[en]Show the floating action button.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "hide",
+      "params": [],
+      "returns": null,
+      "signature": "hide()",
+      "description": "\n[en]Hide the floating action button.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "toggle",
+      "params": [],
+      "returns": null,
+      "signature": "toggle()",
+      "description": "\n[en]Toggle the visibility of the button.[/en]\n[ja][/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-fab",
+      "path": "bindings/angular1/directives/fab.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

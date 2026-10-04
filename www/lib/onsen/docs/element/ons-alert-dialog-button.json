@@ -1,0 +1,58 @@
+{
+  "name": "ons-alert-dialog-button",
+  "path": "core/src/elements/ons-alert-dialog-button.js",
+  "category": "",
+  "description": "[en][/en]\n[ja][/ja]",
+  "deprecated": false,
+  "examples": [
+    "\n<ons-alert-dialog>\n  <div class=\"alert-dialog-title\">Warning!</div>\n  <div class=\"alert-dialog-content\">\n    An error has occurred!\n  </div>\n  <div class=\"alert-dialog-footer\">\n    <alert-dialog-button onclick=\"app.close()\">Cancel</alert-dialog-button>\n    <alert-dialog-button class=\"alert-dialog-button\" onclick=\"app.close()\">OK</alert-dialog-button>\n  </div>\n</ons-alert-dialog>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-alert-dialog",
+      "description": "[en]The `<ons-alert-dialog>` component displays a alert dialog.[/en]\n   [ja]ons-alert-dialogコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Material Design alert-dialog button.[/en]\n   [ja]マテリアルデザインのボタンを表示します。[/ja]"
+    }
+  ],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the button.[/en]\n[ja]ボタンの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]Specify if button should be disabled.[/en]\n[ja]ボタンを無効化する場合は指定してください。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

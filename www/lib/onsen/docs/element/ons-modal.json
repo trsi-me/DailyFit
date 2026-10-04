@@ -1,0 +1,338 @@
+{
+  "name": "ons-modal",
+  "path": "core/src/elements/ons-modal/index.js",
+  "category": "dialog",
+  "description": "[en]\n  Modal component that masks current screen. Underlying components are not subject to any events while the modal component is shown.\n  This component can be used to block user input while some operation is running or to show some information to the user.\n[/en]\n[ja]\n  画面全体をマスクするモーダル用コンポーネントです。下側にあるコンポーネントは、\n  モーダルが表示されている間はイベント通知が行われません。\n[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/reference/modal",
+  "examples": [
+    "\n<ons-modal id=\"modal\">\n  Modal content\n</ons-modal>\n<script>\n  var modal = document.getElementById('modal');\n  modal.show();\n</script>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-dialog",
+      "description": "[en]The `<ons-dialog>` component can be used to create a modal dialog.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "devIg"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "animation",
+      "type": "String",
+      "description": "\n[en]The animation used when showing and hiding the modal. Can be either `\"none\"`, `\"fade\"` or `\"lift\"`.[/en]\n[ja]モーダルを表示する際のアニメーション名を指定します。\"none\"もしくは\"fade\",\"lift\"を指定できます。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "default",
+      "initonly": false
+    },
+    {
+      "name": "animation-options",
+      "type": "Expression",
+      "description": "\n[en]Specify the animation's duration, timing and delay with an object literal. E.g. `{duration: 0.2, delay: 1, timing: 'ease-in'}`.[/en]\n[ja]アニメーション時のduration, timing, delayをオブジェクトリテラルで指定します。e.g. <code>{duration: 0.2, delay: 1, timing: 'ease-in'}</code>[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this modal.[/en]\n[ja]このモーダルを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-preshow",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"preshow\" event is fired.[/en]\n[ja]\"preshow\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-prehide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"prehide\" event is fired.[/en]\n[ja]\"prehide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-postshow",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"postshow\" event is fired.[/en]\n[ja]\"postshow\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-posthide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"posthide\" event is fired.[/en]\n[ja]\"posthide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-destroy",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"destroy\" event is fired.[/en]\n[ja]\"destroy\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [
+    {
+      "name": "preshow",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.modal",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.cancel",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Execute this function to stop the modal from being shown.[/en]\n   [ja]この関数を実行すると、ダイアログの表示がキャンセルされます。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just before the modal is displayed.[/en]\n[ja]モーダルが表示される直前に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "postshow",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.modal",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just after the modal is displayed.[/en]\n[ja]モーダルが表示された直後に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "prehide",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.modal",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.cancel",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Execute this function to stop the modal from being hidden.[/en]\n   [ja]この関数を実行すると、ダイアログの非表示がキャンセルされます。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just before the modal is hidden.[/en]\n[ja]モーダルが隠れる直前に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "posthide",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.modal",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just after the modal is hidden.[/en]\n[ja]モーダルが隠れた後に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "onDeviceBackButton",
+      "type": "Object",
+      "description": "\n[en]Back-button handler.[/en]\n[ja]バックボタンハンドラ。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "visible",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is visible or not.[/en]\n[ja]要素が見える場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "show",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `\"none\"` and `\"fade\"`.[/en]\n   [ja]アニメーション名を指定します。\"none\", \"fade\"のいずれかを指定します。[/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. {duration: 0.2, delay: 0.4, timing: 'ease-in'}[/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]This function is called after the modal has been revealed.[/en]\n   [ja]モーダルが表示され終わった後に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the displayed element[/en]\n   [ja][/ja]"
+      },
+      "signature": "show([options])",
+      "description": "\n[en]Show modal.[/en]\n[ja]モーダルを表示します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "toggle",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `\"none\"` and `\"fade\"`.[/en]\n   [ja]アニメーション名を指定します。\"none\", \"fade\"のいずれかを指定します。[/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. {duration: 0.2, delay: 0.4, timing: 'ease-in'}[/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]This function is called after the modal has been revealed.[/en]\n   [ja]モーダルが表示され終わった後に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "toggle([options])",
+      "description": "\n[en]Toggle modal visibility.[/en]\n[ja]モーダルの表示を切り替えます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "hide",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `\"none\"` and `\"fade\"`.[/en]\n   [ja]アニメーション名を指定します。\"none\", \"fade\"のいずれかを指定します。[/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. {duration: 0.2, delay: 0.4, timing: 'ease-in'}[/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]This function is called after the modal has been revealed.[/en]\n   [ja]モーダルが表示され終わった後に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the hidden element[/en]\n   [ja][/ja]"
+      },
+      "signature": "hide([options])",
+      "description": "\n[en]Hide modal.[/en]\n[ja]モーダルを非表示にします。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-modal",
+      "path": "bindings/angular1/directives/modal.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

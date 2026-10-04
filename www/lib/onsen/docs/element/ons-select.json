@@ -1,0 +1,243 @@
+{
+  "name": "ons-select",
+  "path": "core/src/elements/ons-select.js",
+  "category": "form",
+  "description": "[en]\n  Select component. If you want to place a select with an ID of `my-id` on a page, use `<ons-select select-id=\"my-id\">`.\n  The component will automatically display as a Material Design select on Android.\n  Most attributes that can be used for a normal `<select>` element can also be used on the `<ons-select>` element.\n[/en]\n[ja]セレクトボックスを表示するコンポーネントです。`select` 要素に使用できる属性の多くが `ons-select` 要素でも利用できます。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/select",
+  "examples": [
+    "\n<ons-select>\n  <option value=\"1\">1</option>\n  <option value=\"2\">2nd</option>\n  <option value=\"3\">3rd option</option>\n</ons-select>"
+  ],
+  "seealsos": [],
+  "guides": [
+    {
+      "name": "theming.html#modifiers",
+      "description": "[en]More details about the `modifier` attribute[/en][ja]modifier属性の使い方[/ja]"
+    },
+    {
+      "name": "theming.html#cross-platform-styling-autostyling",
+      "description": "[en]Information about cross platform styling[/en][ja]Information about cross platform styling[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Displays a Material Design select input.[/en]\n  [ja][/ja]"
+    },
+    {
+      "name": "underbar",
+      "description": "[en]Displays a horizontal line underneath a select input.[/en]\n  [ja][/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "hLayx"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "autofocus",
+      "type": "Boolean",
+      "description": "\n[en]Element automatically gains focus on page load.[/en]\n[ja]ページロード時にこのセレクトボックスにフォーカスが移るようにします。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "false",
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Specify if select input should be disabled.[/en]\n[ja]このセレクトボックスを無効化する場合に指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "false",
+      "initonly": false
+    },
+    {
+      "name": "form",
+      "type": "String",
+      "description": "\n[en]Associate a select element to an existing form on the page, even if not nested.[/en]\n[ja]このセレクトボックスを、指定した `form` 要素に紐付けます。セレクトボックスを `form` 要素の外側に配置する際に使用します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "multiple",
+      "type": "Boolean",
+      "description": "\n[en]If this attribute is defined, multiple options can be selected at once.[/en]\n[ja]選択肢の複数選択を有効にします。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "false",
+      "initonly": false
+    },
+    {
+      "name": "name",
+      "type": "String",
+      "description": "\n[en]Name the select element, useful for instance if it is part of a form.[/en]\n[ja]このセレクトボックスの名前を指定します。通常 `form` 要素と共に使用します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "required",
+      "type": "Boolean",
+      "description": "\n[en]Make the select input required for submitting the form it is part of.[/en]\n[ja]このセレクトボックスを入力必須にする場合に指定します。通常 `form` 要素と共に使用します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "select-id",
+      "type": "String",
+      "description": "\n[en]ID given to the inner select, useful for dynamic manipulation.[/en]\n[ja]このセレクトボックスが内部に持つ select 要素に与える ID を指定します。セレクトボックスの内容を動的に変更する必要がある場合に使用します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "size",
+      "type": "Number",
+      "description": "\n[en]How many options are displayed; if there are more than the size then a scroll appears to navigate them.[/en]\n[ja]一度に表示する選択肢の個数を指定します。選択肢がこの属性で指定した個数よりも多い場合、スクロールが有効になります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "1",
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "length",
+      "type": null,
+      "description": "\n[en]Number of options in the select box.[/en]\n[ja]このセレクトボックスに含まれる選択肢の個数を返します。 `select` 要素[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options",
+      "type": null,
+      "description": "\n[en]Several options for handling the select DOM object.[/en]\n[ja]このセレクトボックスに含まれる `option` 要素の配列を返します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "selectedIndex",
+      "type": null,
+      "description": "\n[en]Index of the currently selected option.[/en]\n[ja]現在選択されている選択肢のインデックスを返します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "value",
+      "type": null,
+      "description": "\n[en]Value of the currently selected option.[/en]\n[ja]現在選択されている選択肢の値を返します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]このイベントが発火された際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]削除するイベントリスナーを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしイベントリスナーを指定しなかった場合には、そのイベントに紐づく全てのイベントリスナーが削除されます。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-select",
+      "path": "bindings/angular1/directives/select.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    },
+    {
+      "name": "ons-select",
+      "path": "bindings/angular2/src/directives/ons-select.ts",
+      "description": "[en]Angular directive for `<ons-select>` component.[/en]\n[ja]`<ons-select>`要素のAngularディレクティブです。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular2",
+      "overwrite": "",
+      "directive": "OnsSelect",
+      "selector": "ons-select",
+      "examples": [
+        "\n<ons-select [(ngModel)]=\"selectedValue\">\n  <option value=\"Item A\">Item A</option>\n  <option value=\"Item B\">Item B</option>\n  <option value=\"Item C\">Item C</option>\n</ons-select>"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

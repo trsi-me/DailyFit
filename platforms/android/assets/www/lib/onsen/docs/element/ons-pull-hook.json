@@ -1,0 +1,291 @@
+{
+  "name": "ons-pull-hook",
+  "path": "core/src/elements/ons-pull-hook.js",
+  "category": "control",
+  "description": "[en]\n  Component that adds **Pull to refresh** functionality to an `<ons-page>` element.\n  It can be used to perform a task when the user pulls down at the top of the page. A common usage is to refresh the data displayed in a page.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/pull-hook",
+  "examples": [
+    "\n<ons-page>\n  <ons-pull-hook>\n    Release to refresh\n  </ons-pull-hook>\n</ons-page>\n<script>\n  document.querySelector('ons-pull-hook').onAction = function(done) {\n    setTimeout(done, 1000);\n  };\n</script>"
+  ],
+  "seealsos": [],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "WbJogM"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]If this attribute is set the \"pull-to-refresh\" functionality is disabled.[/en]\n[ja]この属性がある時、disabled状態になりアクションが実行されなくなります[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "height",
+      "type": "String",
+      "description": "\n[en]Specify the height of the component. When pulled down further than this value it will switch to the \"preaction\" state. The default value is \"64px\".[/en]\n[ja]コンポーネントの高さを指定します。この高さ以上にpull downすると\"preaction\"状態に移行します。デフォルトの値は\"64px\"です。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "threshold-height",
+      "type": "String",
+      "description": "\n[en]Specify the threshold height. The component automatically switches to the \"action\" state when pulled further than this value. The default value is \"96px\". A negative value will disable this property. If this value is lower than the height, it will skip \"preaction\" state.[/en]\n[ja]閾値となる高さを指定します。この値で指定した高さよりもpull downすると、このコンポーネントは自動的に\"action\"状態に移行します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "fixed-content",
+      "type": null,
+      "description": "\n[en]If this attribute is set the content of the page will not move when pulling.[/en]\n[ja]この属性がある時、プルフックが引き出されている時にもコンテンツは動きません。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this component.[/en]\n[ja]このコンポーネントを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ng-action",
+      "type": "Expression",
+      "description": "\n[en]Use to specify custom behavior when the page is pulled down. A <code>$done</code> function is available to tell the component that the action is completed.[/en]\n[ja]pull downしたときの振る舞いを指定します。アクションが完了した時には<code>$done</code>関数を呼び出します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-changestate",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"changestate\" event is fired.[/en]\n[ja]\"changestate\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [
+    {
+      "name": "changestate",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]\n   [ja]イベントオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.pullHook",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.state",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Current state.[/en]\n   [ja]現在の状態名を参照できます。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired when the state is changed. The state can be either \"initial\", \"preaction\" or \"action\".[/en]\n[ja]コンポーネントの状態が変わった場合に発火します。状態は、\"initial\", \"preaction\", \"action\"のいずれかです。[/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "onAction",
+      "type": "Function",
+      "description": "\n[en]This will be called in the `action` state if it exists. The function will be given a `done` callback as it's first argument.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "onPull",
+      "type": "Function",
+      "description": "\n[en]Hook called whenever the user pulls the element. It gets the pulled distance ratio (scroll / height) and an animationOptions object as arguments.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "height",
+      "type": "Number",
+      "description": "\n[en]The height of the pull hook in pixels. The default value is `64px`.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "thresholdHeight",
+      "type": "Number",
+      "description": "\n[en]The thresholdHeight of the pull hook in pixels. The default value is `96px`.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "state",
+      "type": "String",
+      "description": "\n[en]Current state of the element.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "pullDistance",
+      "type": "Number",
+      "description": "\n[en]The current number of pixels the pull hook has moved.[/en]\n[ja]現在のプルフックが引き出された距離をピクセル数。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]このイベントが発火された際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]削除するイベントリスナーを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしイベントリスナーを指定しなかった場合には、そのイベントに紐づく全てのイベントリスナーが削除されます。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-pull-hook",
+      "path": "bindings/angular1/directives/pullHook.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [
+        "\n<script>\n  ons.bootstrap()\n  .controller('MyController', function($scope, $timeout) {\n    $scope.items = [3, 2 ,1];\n    $scope.load = function($done) {\n      $timeout(function() {\n        $scope.items.unshift($scope.items.length + 1);\n        $done();\n      }, 1000);\n    };\n  });\n</script>\n<ons-page ng-controller=\"MyController\">\n  <ons-pull-hook var=\"loader\" ng-action=\"load($done)\">\n    <span ng-switch=\"loader.state\">\n      <span ng-switch-when=\"initial\">Pull down to refresh</span>\n      <span ng-switch-when=\"preaction\">Release to refresh</span>\n      <span ng-switch-when=\"action\">Loading data. Please wait...</span>\n    </span>\n  </ons-pull-hook>\n  <ons-list>\n    <ons-list-item ng-repeat=\"item in items\">\n      Item #{{ item }}\n    </ons-list-item>\n  </ons-list>\n</ons-page>"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    },
+    {
+      "name": "ons-pull-hook",
+      "path": "bindings/angular2/src/directives/ons-pull-hook.ts",
+      "description": "[en]Angular directive for `<ons-pull-hook>` component.[/en]\n[ja]`<ons-pull-hook>`要素のためのAngular2ディレクティブです。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular2",
+      "overwrite": "",
+      "directive": "OnsPullHook",
+      "selector": "ons-pull-hook",
+      "examples": [
+        "\n@Component({\n  selector: 'app',\n  template: `\n  <ons-page>\n    <ons-toolbar>\n      <div class=\"center\">Pull Hook</div>\n    </ons-toolbar>\n    <div class=\"content\">\n      <ons-pull-hook height=\"64px\" threshold-height=\"128px\"\n        (pull)=\"onPull($event)\" (changestate)=\"onChangeState($event)\" (action)=\"onAction($event)\">\n        {{message}}\n      </ons-pull-hook>\n    </div>\n  </ons-page>\n  `\n})\nexport class AppComponent {\n  message: string = 'Pull down to refresh';\n  onAction($event) {\n    setTimeout(() => {\n      $event.done();\n    }, 1000);\n  }\n  onChangeState($event) {\n    switch ($event.state) {\n      case 'initial':\n        this.message = 'Pull down to refresh';\n        break;\n      case 'preaction':\n        this.message = 'Release to refresh';\n        break;\n      case 'action':\n        this.message = 'Loading data...';\n        break;\n    }\n  }\n  onPull($event) {\n    console.log($event.ratio);\n  }\n}"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "action",
+      "description": "\n[en]Triggers when the page is pulled down.[/en]\n[ja]`ons-pull-hook`要素のアクションが必要なときに呼び出されます。[/ja]",
+      "type": "",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    },
+    {
+      "name": "changestate",
+      "description": "\n[en]Triggers when the state is changed.[/en]\n[ja]`ons-pull-hook`要素の状態が変わった時に呼び出されます。[/ja]",
+      "type": "",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    },
+    {
+      "name": "pull",
+      "description": "\n[en]Triggers whenever the element is pulled.[/en]\n[ja]`ons-pull-hook`要素がプルされているときに呼び出されます。[/ja]",
+      "type": "",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ons-gesture-detector",
+  "path": "core/src/elements/ons-gesture-detector.js",
+  "category": "gesture",
+  "description": "[en]\n  Component to detect finger gestures within the wrapped element. Following gestures are supported:\n  - Drag gestures: `drag`, `dragleft`, `dragright`, `dragup`, `dragdown`\n  - Hold gestures: `hold`, `release`\n  - Swipe gestures: `swipe`, `swipeleft`, `swiperight`, `swipeup`, `swipedown`\n  - Tap gestures: `tap`, `doubletap`\n  - Pinch gestures: `pinch`, `pinchin`, `pinchout`\n  - Other gestures: `touch`, `transform`, `rotate`\n[/en]\n[ja]要素内のジェスチャー操作を検知します。詳しくはガイドを参照してください。[/ja]",
+  "deprecated": false,
+  "examples": [
+    "\n<ons-gesture-detector>\n  <div id=\"detect-area\" style=\"width: 100px; height: 100px;\">\n    Swipe Here\n  </div>\n</ons-gesture-detector>\n<script>\n  document.addEventListener('swipeleft', function(event) {\n    if (event.target.matches('#detect-area')) {\n      console.log('Swipe left is detected.');\n    }\n  });\n</script>"
+  ],
+  "seealsos": [],
+  "guides": [
+    {
+      "name": "features.html#gesture-detection",
+      "description": "[en]Detecting finger gestures[/en]\n   [ja]ジェスチャー操作の検知[/ja]"
+    }
+  ],
+  "modifiers": [],
+  "codepens": [],
+  "attributes": [],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

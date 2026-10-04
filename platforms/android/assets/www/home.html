@@ -1,0 +1,32 @@
+﻿    <ons-page id="MainData" ng-controller="ItemController">
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="openMenu()">
+                    <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">
+                Main
+            </div>
+        </ons-toolbar>
+
+
+
+
+        <p class="login-chamada" style="display:block;width:100%;text-align:center">Adding data to Mysql Table</p>
+        <div style="text-align:center">
+
+            <ons-input maxlenght="50" id="addname" modifier="underbar" ng-model="addname" placeholder="Name" float></ons-input><br /><br />
+
+
+            <ons-button id="addclassbutton" modifier="cta" ng-click="addItem()">Add</ons-button>
+        </div>
+
+        <ul >
+            <li  ng-repeat="item in items">
+                {{item.ID}} - {{item.Name}} 
+            </li>
+        </ul>
+
+
+    </ons-page>

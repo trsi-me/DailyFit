@@ -1,0 +1,38 @@
+{
+  "name": "ons-if-platform",
+  "path": "bindings/angular1/directives/ifPlatform.js",
+  "category": "conditional",
+  "description": "[en]Conditionally display content depending on the platform / browser. Valid values are \"opera\", \"firefox\", \"safari\", \"chrome\", \"ie\", \"edge\", \"android\", \"blackberry\", \"ios\" and \"wp\".[/en]\n[ja]プラットフォームやブラウザーに応じてコンテンツの制御をおこないます。opera, firefox, safari, chrome, ie, edge, android, blackberry, ios, wpのいずれかの値を空白区切りで複数指定できます。[/ja]",
+  "deprecated": false,
+  "extensionOf": "angular1",
+  "examples": [
+    "\n<div ons-if-platform=\"android\">\n  ...\n</div>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-if-orientation",
+      "description": "[en]ons-if-orientation component[/en][ja]ons-if-orientationコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "ons-if-platform",
+      "type": "String",
+      "description": "\n[en]One or multiple space separated values: \"opera\", \"firefox\", \"safari\", \"chrome\", \"ie\", \"edge\", \"android\", \"blackberry\", \"ios\" or \"wp\".[/en]\n[ja]\"opera\", \"firefox\", \"safari\", \"chrome\", \"ie\", \"edge\", \"android\", \"blackberry\", \"ios\", \"wp\"のいずれか空白区切りで複数指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

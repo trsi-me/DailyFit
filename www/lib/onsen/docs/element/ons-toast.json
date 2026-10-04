@@ -1,0 +1,286 @@
+{
+  "name": "ons-toast",
+  "path": "core/src/elements/ons-toast/index.js",
+  "category": "dialog",
+  "description": "[en]\n  The Toast or Snackbar component is useful for displaying dismissable information or simple actions at (normally) the bottom of the page.\n  This component does not block user input, allowing the app to continue its flow. For simple toasts, consider `ons.notification.toast` instead.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/toast",
+  "examples": [],
+  "seealsos": [
+    {
+      "name": "ons-alert-dialog",
+      "description": "[en]The `<ons-alert-dialog>` component is preferred for displaying undismissable information.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "animation",
+      "type": "String",
+      "description": "\n[en]The animation used when showing and hiding the toast. Can be either `\"default\"`, `\"ascend\"` (Android), `\"lift\"` (iOS), `\"fall\"`, `\"fade\"` or `\"none\"`.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "default",
+      "initonly": false
+    },
+    {
+      "name": "animation-options",
+      "type": "Expression",
+      "description": "\n[en]Specify the animation's duration, timing and delay with an object literal. E.g. `{duration: 0.2, delay: 1, timing: 'ease-in'}`.[/en]\n[ja]アニメーション時のduration, timing, delayをオブジェクトリテラルで指定します。e.g. <code>{duration: 0.2, delay: 1, timing: 'ease-in'}</code>[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this toast dialog.[/en]\n[ja]このトーストを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-preshow",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"preshow\" event is fired.[/en]\n[ja]\"preshow\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-prehide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"prehide\" event is fired.[/en]\n[ja]\"prehide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-postshow",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"postshow\" event is fired.[/en]\n[ja]\"postshow\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-posthide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"posthide\" event is fired.[/en]\n[ja]\"posthide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-destroy",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"destroy\" event is fired.[/en]\n[ja]\"destroy\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "onDeviceBackButton",
+      "type": "Object",
+      "description": "\n[en]Back-button handler.[/en]\n[ja]バックボタンハンドラ。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "visible",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is visible or not.[/en]\n[ja]要素が見える場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "show",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `\"default\"`, `\"ascend\"` (Android), `\"lift\"` (iOS), `\"fall\"`, `\"fade\"` or `\"none\"`.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. {duration: 0.2, delay: 0.4, timing: 'ease-in'}[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the displayed element[/en]\n   [ja][/ja]"
+      },
+      "signature": "show([options])",
+      "description": "\n[en]Show the element.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "toggle",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `\"default\"`, `\"ascend\"` (Android), `\"lift\"` (iOS), `\"fall\"`, `\"fade\"` or `\"none\"`.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. {duration: 0.2, delay: 0.4, timing: 'ease-in'}[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "toggle([options])",
+      "description": "\n[en]Toggle toast visibility.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "hide",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `\"default\"`, `\"ascend\"` (Android), `\"lift\"` (iOS), `\"fall\"`, `\"fade\"` or `\"none\"`.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. {duration: 0.2, delay: 0.4, timing: 'ease-in'}[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the hidden element[/en]\n   [ja][/ja]"
+      },
+      "signature": "hide([options])",
+      "description": "\n[en]Hide toast.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火された際に呼び出されるコールバックを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出されるコールバックを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]削除するイベントリスナーの関数オブジェクトを渡します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしlistenerパラメータが指定されなかった場合、そのイベントのリスナーが全て削除されます。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-toast",
+      "path": "bindings/angular1/directives/toast.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

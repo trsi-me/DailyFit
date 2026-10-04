@@ -1,0 +1,109 @@
+{
+  "name": "ons-toolbar-button",
+  "path": "core/src/elements/ons-toolbar-button.js",
+  "category": "page",
+  "description": "[en]Button component for ons-toolbar and ons-bottom-toolbar.[/en]\n[ja]ons-toolbarあるいはons-bottom-toolbarに設置できるボタン用コンポーネントです。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/page",
+  "examples": [
+    "\n<ons-toolbar>\n  <div class=\"left\">\n    <ons-toolbar-button>\n      Button\n    </ons-toolbar-button>\n  </div>\n  <div class=\"center\">\n    Title\n  </div>\n  <div class=\"right\">\n    <ons-toolbar-button>\n      <ons-icon icon=\"ion-navicon\" size=\"28px\"></ons-icon>\n    </ons-toolbar-button>\n  </div>\n</ons-toolbar>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-toolbar",
+      "description": "[en]The `<ons-toolbar>` component displays a navigation bar at the top of a page.[/en]\n   [ja]ons-toolbarコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-back-button",
+      "description": "[en]The `<ons-back-button>` displays a back button in the navigation bar.[/en]\n   [ja]ons-back-buttonコンポーネント[/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "compilation.html#toolbar-compilation",
+      "description": "[en]Adding a toolbar[/en]\n   [ja]ツールバーの追加[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Material Design toolbar button.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "outline",
+      "description": "[en]A button with an outline.[/en]\n   [ja]アウトラインをもったボタンを表示します。[/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "aHmGL"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the button.[/en]\n[ja]ボタンの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "icon",
+      "type": "String",
+      "description": "\n[en]Creates an `ons-icon` component with this string.[/en]\n[ja]`ons-icon`コンポーネントを悪性します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]Specify if button should be disabled.[/en]\n[ja]ボタンを無効化する場合は指定してください。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this button.[/en]\n[ja]このボタンを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [],
+  "elements": [
+    {
+      "name": "ons-toolbar-button",
+      "path": "bindings/angular1/directives/toolbarButton.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html ng-app="appMaps">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+
+
+
+    <!-- JS dependencies (order matters!) -->
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/config.js"></script>
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/onsen/onsenui.js"></script>
+    <script src="lib/onsen/angular-onsenui.js"></script>
+
+
+
+    <script src="lib/jquery-3.1.1.min.js"></script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCEjyagtqE_mZpKLpdbYcIs0Q4cVeTIuoA"></script>
+    <script src="lib/lodash.min.js"></script>
+    <script src="lib/angular-google-maps.min.js"></script>
+    <script src="lib/angular-simple-logger.min.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/Chart.min.js"></script>
+    <script src="lib/angular-chart.min.js"></script>
+    <script src="lib/ngStorage.min.js"></script>
+
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css" />
+
+
+
+
+
+
+    <itle>App Title</itle>
+
+    <!-- App init -->
+
+    <script>
+        function openMenu() {
+            try {
+                var splitterElement = document.getElementById('mySplitter');
+                if (splitterElement && splitterElement.left) {
+                    splitterElement.left.open();
+                } else if (splitterElement && splitterElement.splitter && splitterElement.splitter.left) {
+                    splitterElement.splitter.left.open();
+                }
+            } catch (e) {
+                console.error('Error opening menu:', e);
+            }
+        }
+
+        function loadPage(page) {
+            try {
+                var splitterElement = document.getElementById('mySplitter');
+                var splitter = splitterElement.splitter || splitterElement;
+                if (splitter && splitter.content) {
+                    splitter.content.load(page).then(function () {
+                        if (splitter.left) {
+                            splitter.left.close();
+                        }
+                    }).catch(function (err) {
+                        console.error('Error loading page:', err);
+                    });
+                }
+            } catch (e) {
+                console.error('Error in loadPage:', e);
+            }
+        }
+
+        function maxLengthCheck(object) {
+
+            if (object.value.length > object.maxLength)
+                object.value = object.value.slice(0, object.maxLength)
+        }
+
+
+
+    </script>
+    <script type="text/ons-template" id="alert.html">
+        <ons-alert-dialog animation="default" cancelable>
+            <div class="alert-dialog-title">Warning!</div>
+            <div class="alert-dialog-content">
+                An error has occurred!
+            </div>
+            <div class="alert-dialog-footer">
+                <button class="alert-dialog-button" ng-click="dismis();">OK</button>
+            </div>
+        </ons-alert-dialog>
+
+
+
+
+
+    </script>
+
+    <style>
+        ons-splitter-side .page__background {
+            background-color: #333;
+        }
+
+        .menu-list,
+        .menu-item {
+            background-color: transparent;
+            background-image: none !important;
+            border-color: transparent;
+            color: #fff;
+            box-shadow: none !important;
+        }
+
+        .menu-list {
+            margin-top: 25px;
+        }
+
+        .menu-notification {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 14px;
+            height: 16px;
+            line-height: 16px;
+            min-width: 16px;
+            font-weight: 600;
+            margin-left: -3px;
+        }
+
+        .bottom-menu-list,
+        .bottom-menu-item:first-child,
+        .bottom-menu-item:last-child,
+        .bottom-menu-item {
+            border-color: #393939;
+            background-color: transparent;
+            background-image: none !important;
+            color: #ccc;
+            box-shadow: none !important;
+        }
+
+
+        ons-input {
+            width: 90% !important;
+        }
+
+
+
+        html,
+        body,
+        #map_canvas {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+        }
+
+        #map_canvas {
+            position: relative;
+        }
+
+        .angular-google-map-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+
+
+
+
+
+        .search-input-map {
+            width: 60%;
+            z-index: 1;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .par-search {
+            margin-top: 10%;
+        }
+
+        .par-buttons {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            bottom: 0px;
+        }
+
+        .btn-delete {
+            z-index: 1;
+        }
+
+        .btn-distance {
+            z-index: 1;
+            margin-left: 5px;
+        }
+
+        .list-item {
+            padding: 0;
+            height: 72px;
+        }
+
+        .list-action-menu {
+            background-color: #aaa;
+            color: white;
+            padding: 0 12px;
+            box-sizing: border-box;
+            line-height: 72px;
+        }
+
+        .list-action-menu:active {
+            background-color: #666;
+        }
+
+        .list-action-item {
+            padding: 0 12px;
+            box-sizing: border-box;
+        }
+
+        .name {
+            margin-top: 20px;
+            line-height: 1.2;
+        }
+
+        .desc {
+            line-height: 1.2;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .page__content::-webkit-scrollbar,
+        ::-webkit-scrollbar {
+            overflow-y: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Cordova reference -->
+    <!-- cordova.js سيتم تحميله تلقائياً في Cordova فقط -->
+    <script>
+        // تحميل cordova.js فقط إذا كان في بيئة Cordova
+        if (typeof window.cordova !== 'undefined' || window.location.protocol === 'file:') {
+            var cordovaScript = document.createElement('scr ipt');
+            cordovaScript.src = 'cordova.js';
+            document.head.appendChild(cordovaScript);
+        }
+    </script>
+
+
+
+    <!-- -->
+
+
+    <ons-splitter id="mySplitter" var="splitter">
+        <ons-splitter-side side="left" width="220px" ng-controller="AppController as app" data-ng-init="init()"
+            mode="collapse" swipeable id="splittermenu">
+            <ons-page>
+                <ons-list class="menu-list">
+                    <ons-list-item class="longdivider menu-item" tappable tap-background-color="#555"
+                        ng-click="load('user_data.html')">
+                        <div class="left">
+                            <ons-icon icon="fa-user" class="list__item__icon"></ons-icon>
+                        </div>
+                        بيانات المستخدم
+                    </ons-list-item>
+                    <ons-list-item class="longdivider menu-item" tappable tap-background-color="#555"
+                        ng-click="load('exercises.html')">
+                        <div class="left">
+                            <ons-icon icon="fa-heartbeat" class="list__item__icon"></ons-icon>
+                        </div>
+                        التمارين اليومية
+                    </ons-list-item>
+                </ons-list>
+
+                <br>
+
+                <ons-list class="bottom-menu-list">
+                    <ons-list-item class="longdivider bottom-menu-item" tappable tap-background-color="#555"
+                        ng-click="load('login.html')">
+                        تسجيل الخروج
+                    </ons-list-item>
+                </ons-list>
+            </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content page="login.html">
+
+
+        </ons-splitter-content>
+    </ons-splitter>
+
+
+    <ons-template id="login.html">
+        <ons-page id="LoginPage">
+            <div id="formLogin">
+                <div class="subFormLogin">
+
+                    <ons-icon style="margin-left:20px;" icon="ion-ios-locked"></ons-icon>
+
+                    <p class="login-chamada" style="display:block;width:100%;text-align:center">DailyFit - تسجيل الدخول
+                    </p>
+                    <div style="text-align:center;margin-top:80px">
+                        <p><ons-input maxlenght="60" type="text" id="login-email" modifier="underbar"
+                                placeholder="E-mail" float></p>
+
+
+                        <p><ons-input type="password" id="login-password" modifier="underbar" placeholder="Password"
+                                float></p>
+                    </div>
+                </div>
+                <ons-button id="loginButton" modifier="large" onclick="checkLogin('home.html')"
+                    style="margin-top:20px">Login</ons-button>
+
+                <div style="width:100%;text-align:center;font-size:14px;margin-top:20px;">
+                    <a href="#" onclick="loadPage('signup.html')" style="margin-left:15px">مستخدم جديد؟ سجل الآن</a>
+
+                </div>
+            </div>
+
+            <ons-modal var="loginModal">
+                <ons-icon icon="ion-alert"></ons-icon>
+                <p id="login-msg"></p>
+            </ons-modal>
+        </ons-page>
+    </ons-template>
+
+
+
+    <ons-template id="signup.html">
+        <ons-page id="SignupPage">
+            <div id="formLogin">
+                <div class="subFormLogin">
+
+                    <ons-icon style="margin-left:20px;" icon="ion-ios-locked"></ons-icon>
+
+                    <p class="login-chamada" style="display:block;width:100%;text-align:center">DailyFit - إنشاء حساب
+                        جديد</p>
+
+                    <div style="text-align:center;margin-top:80px">
+                        <p>
+                            <ons-input maxlenght="50" id="signup-name" modifier="underbar" placeholder="الإسم"
+                                float></ons-input>
+                        </p>
+
+                        <p><ons-input maxlenght="60" type="text" id="signup-email" modifier="underbar"
+                                placeholder="E-mail" float></p>
+
+                        <p><ons-input maxlenght="15" type="text" id="signup-phone" modifier="underbar"
+                                placeholder="Phone e.g. 001444444444" float></p>
+
+                        <p><ons-input type="password" id="signup-password" modifier="underbar" placeholder="Password"
+                                float></p>
+                    </div>
+                </div>
+                <div style="text-align: center;margin-top:20px">
+                    <ons-button id="Signup" modifier="cta" onclick="signup()">Sign UP</ons-button>
+                    <ons-button id="Cancle" modifier="cta" onclick="cancel()">Cancel</ons-button>
+                </div>
+            </div>
+
+            <ons-modal var="loginModal">
+                <ons-icon icon="ion-alert"></ons-icon>
+                <p id="login-msg"></p>
+            </ons-modal>
+        </ons-page>
+    </ons-template>
+
+
+
+
+
+
+
+
+
+
+    <ons-template id="map_result.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="openMenu()">
+                        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    Main
+                </div>
+            </ons-toolbar>
+
+
+
+
+            <ons-row style="margin-top: 100px; text-align: center;">
+                <ons-col>
+
+                    <ul class="list">
+                        <li class="list-item">
+                            <div class="list-item__center">
+                                <p>Latitude:{{lat}}</p>
+
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-item__center">
+                                <p>Longitude:{{lng}}</p>
+
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </ons-col>
+            </ons-row>
+
+
+
+        </ons-page>
+    </ons-template>
+
+
+
+    <script type="text/ng-template" id="searchbox.tpl.html">
+        <input type="text" placeholder="Search Box">
+    </script>
+
+    <div id="ProgressBar"
+        style="position:absolute;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.2);visibility:hidden">
+        <ons-progress-circular indeterminate
+            style="margin:0; top:50%;left:50%;position:absolute;margin-right:-50%;transform:translate(-50%,-50%)"></ons-progress-circular>
+
+
+    </div>
+
+
+
+
+
+    <script id="map.html" type="text/ons-template">
+
+        <ons-page id="map" ng-controller="MAPX">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="openMenu()">
+                        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    School Details
+                </div>
+            </ons-toolbar>
+
+            <div id="map_canvas">
+
+
+
+
+
+
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" events="map.markersEvents">
+                    <ui-gmap-search-box template="searchbox.template" events="searchbox.events" center="searchbox.center"></ui-gmap-search-box>
+                    <ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id">
+                    </ui-gmap-marker>
+
+                </ui-gmap-google-map>
+
+
+                <p class="par-buttons">
+                    <ons-button class="btn-delete" ng-click="selectLocation()">
+                        Select this location
+                    </ons-button>
+                    <ons-button class="btn-distance" ng-click="position()">
+                        Use GPS
+                    </ons-button>
+                </p>
+            </div>
+        </ons-page>
+    </script>
+
+
+
+
+
+
+
+    <!-- صفحة بيانات المستخدم -->
+    <ons-template id="user_data.html">
+        <ons-page id="UserDataPage" ng-controller="UserDataController">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="openMenu()">
+                        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">بيانات المستخدم</div>
+            </ons-toolbar>
+
+            <div style="padding: 20px;">
+                <p class="login-chamada" style="display:block;width:100%;text-align:center;margin-bottom:30px">معلوماتك
+                    الشخصية</p>
+
+                <div style="text-align:center">
+                    <ons-input type="text" id="user-name" modifier="underbar" ng-model="userData.name"
+                        placeholder="الاسم" float disabled></ons-input><br /><br />
+
+                    <ons-input type="email" id="user-email" modifier="underbar" ng-model="userData.email"
+                        placeholder="البريد الإلكتروني" float disabled></ons-input><br /><br />
+
+                    <ons-input type="number" id="user-weight" modifier="underbar" ng-model="userData.weight"
+                        placeholder="الوزن (كجم)" float step="0.1"></ons-input><br /><br />
+
+                    <ons-input type="number" id="user-height" modifier="underbar" ng-model="userData.height"
+                        placeholder="الطول (سم)" float step="0.1"></ons-input><br /><br />
+
+                    <ons-input type="number" id="user-age" modifier="underbar" ng-model="userData.age"
+                        placeholder="العمر" float></ons-input><br /><br />
+
+                    <ons-input type="number" id="user-calories" modifier="underbar" ng-model="userData.daily_calories"
+                        placeholder="السعرات الحرارية اليومية" float></ons-input><br /><br />
+
+                    <ons-button modifier="large" ng-click="updateUserData()" style="margin-top:20px">حفظ
+                        البيانات</ons-button>
+                </div>
+
+                <div style="margin-top: 30px; padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
+                    <h3 style="text-align: center; margin-bottom: 10px;">ملخص المعلومات</h3>
+                    <p><strong>الاسم:</strong> {{userData.name || 'غير محدد'}}</p>
+                    <p><strong>الوزن:</strong> {{userData.weight || 0}} كجم</p>
+                    <p><strong>الطول:</strong> {{userData.height || 0}} سم</p>
+                    <p><strong>العمر:</strong> {{userData.age || 0}} سنة</p>
+                    <p><strong>السعرات اليومية:</strong> {{userData.daily_calories || 0}} سعرة حرارية</p>
+                </div>
+            </div>
+        </ons-page>
+    </ons-template>
+
+    <!-- صفحة التمارين اليومية -->
+    <ons-template id="exercises.html">
+        <ons-page id="ExercisesPage" ng-controller="ExercisesController">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="openMenu()">
+                        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">التمارين اليومية</div>
+            </ons-toolbar>
+
+            <div style="padding: 20px;">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <ons-segment ng-model="selectedDay" style="width: 100%;">
+                        <button ng-click="loadDayExercises(1)">الأحد</button>
+                        <button ng-click="loadDayExercises(2)">الإثنين</button>
+                        <button ng-click="loadDayExercises(3)">الثلاثاء</button>
+                        <button ng-click="loadDayExercises(4)">الأربعاء</button>
+                        <button ng-click="loadDayExercises(5)">الخميس</button>
+                        <button ng-click="loadDayExercises(6)">الجمعة</button>
+                        <button ng-click="loadDayExercises(7)">السبت</button>
+                    </ons-segment>
+                </div>
+
+                <h3 style="text-align: center; margin: 20px 0;">{{currentDayName}}</h3>
+
+                <div ng-if="exercises.length === 0" style="text-align: center; padding: 40px;">
+                    <ons-icon icon="fa-spinner" spin style="font-size: 40px;"></ons-icon>
+                    <p>جاري تحميل التمارين...</p>
+                </div>
+
+                <ons-list ng-if="exercises.length > 0">
+                    <ons-list-item ng-repeat="exercise in exercises" tappable>
+                        <div class="left">
+                            <ons-icon icon="fa-check-circle" style="color: green;"
+                                ng-if="exercise.completed"></ons-icon>
+                            <ons-icon icon="fa-circle-o" style="color: gray;" ng-if="!exercise.completed"></ons-icon>
+                        </div>
+                        <div class="center">
+                            <div class="list-item__title">{{exercise.name_ar}}</div>
+                            <div class="list-item__subtitle">{{exercise.description}}</div>
+                            <div class="list-item__subtitle">
+                                المدة: {{exercise.duration_minutes}} دقيقة |
+                                السعرات: {{exercise.calories_per_minute * exercise.duration_minutes}} سعرة
+                            </div>
+                        </div>
+                        <div class="right">
+                            <ons-button modifier="quiet" ng-click="completeExercise(exercise)"
+                                ng-if="!exercise.completed">
+                                إكمال
+                            </ons-button>
+                            <span ng-if="exercise.completed" style="color: green;">مكتمل</span>
+                        </div>
+                    </ons-list-item>
+                </ons-list>
+
+                <div
+                    style="margin-top: 30px; padding: 15px; background-color: #e8f5e9; border-radius: 5px; text-align: center;">
+                    <h4>إجمالي السعرات المحروقة اليوم</h4>
+                    <h2 style="color: #4caf50; margin: 10px 0;">{{totalCaloriesBurned}} سعرة حرارية</h2>
+                </div>
+            </div>
+        </ons-page>
+    </ons-template>
+
+    <script src="scripts/index.js"></script>
+
+    <script type='text/javascript' src='scripts/controller.js'></script><!--script-->
+
+    <script>
+        // تهيئة Splitter بعد تحميل Onsen UI
+        document.addEvenOMContentLoaded', function () {
+            ons.ready(function () {
+                try {
+                    var splitterElement = document.getElementById('mySplitter');
+                    if (splitterElement) {
+                        // التأكد من تهيئة splitter بشكل صحيح
+                        if (!splitterElement.splitter) {
+                            splitterElement.splitter = splitterElement;
+                        }
+                    }
+                } catch (e) {
+                    console.error('Error initializing splitter:', e);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

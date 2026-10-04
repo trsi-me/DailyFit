@@ -1,0 +1,51 @@
+{
+  "name": "ons-list-header",
+  "path": "core/src/elements/ons-list-header.js",
+  "category": "list",
+  "description": "[en]Header element for list items. Must be put inside the `<ons-list>` component.[/en]\n[ja]リスト要素に使用するヘッダー用コンポーネント。ons-listと共に使用します。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/list",
+  "examples": [
+    "\n<ons-list>\n  <ons-list-header>Header Text</ons-list-header>\n  <ons-list-item>Item</ons-list-item>\n  <ons-list-item>Item</ons-list-item>\n</ons-list>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-list",
+      "description": "[en]The `<ons-list>` component[/en]\n   [ja]ons-listコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-list-item",
+      "description": "[en]The `<ons-list-item>` component[/en]\n   [ja]ons-list-itemコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Display a Material Design list header.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "yxcCt"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the list header.[/en]\n[ja]ヘッダーの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

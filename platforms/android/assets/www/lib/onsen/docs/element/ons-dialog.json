@@ -1,0 +1,439 @@
+{
+  "name": "ons-dialog",
+  "path": "core/src/elements/ons-dialog/index.js",
+  "category": "dialog",
+  "description": "[en]\n  Dialog that is displayed on top of current screen. As opposed to the `<ons-alert-dialog>` element, this component can contain any kind of content.\n  To use the element it can either be attached directly to the `<body>` element or dynamically created from a template using the `ons.createDialog(template)` utility function and the `<template>` tag.\n  The dialog is useful for displaying menus, additional information or to ask the user to make a decision.\n  It will automatically be displayed as Material Design when running on an Android device.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/dialog",
+  "examples": [
+    "\n<ons-dialog id=\"dialog\">\n  <p>This is a dialog!</p>\n</ons-dialog>\n<script>\n  document.getElementById('dialog').show();\n</script>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-alert-dialog",
+      "description": "[en]`<ons-alert-dialog>` component[/en]\n   [ja]ons-alert-dialogコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-popover",
+      "description": "[en]`<ons-popover>` component[/en]\n   [ja]ons-popoverコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-modal",
+      "description": "[en]`<ons-modal>` component[/en]\n   [ja]ons-modalコンポーネント[/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "theming.html#modifiers",
+      "description": "[en]More details about the `modifier` attribute[/en][ja]modifier属性の使い方[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Display a Material Design dialog.[/en]\n   [ja]マテリアルデザインのダイアログを表示します。[/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "zxxaGa"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the dialog.[/en]\n[ja]ダイアログの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "cancelable",
+      "type": null,
+      "description": "\n[en]If this attribute is set the dialog can be closed by tapping the background or by pressing the back button on Android devices.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]If this attribute is set the dialog is disabled.[/en]\n[ja]この属性がある時、ダイアログはdisabled状態になります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "animation",
+      "type": "String",
+      "description": "\n[en]The animation used when showing and hiding the dialog. Can be either `\"none\"` or `\"default\"`.[/en]\n[ja]ダイアログを表示する際のアニメーション名を指定します。\"none\"もしくは\"default\"を指定できます。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "default",
+      "initonly": false
+    },
+    {
+      "name": "animation-options",
+      "type": "Expression",
+      "description": "\n[en]Specify the animation's duration, timing and delay with an object literal. E.g. `{duration: 0.2, delay: 1, timing: 'ease-in'}`.[/en]\n[ja]アニメーション時のduration, timing, delayをオブジェクトリテラルで指定します。e.g. `{duration: 0.2, delay: 1, timing: 'ease-in'}`[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "mask-color",
+      "type": "String",
+      "description": "\n[en]Color of the background mask. Default is `\"rgba(0, 0, 0, 0.2)\"`.[/en]\n[ja]背景のマスクの色を指定します。\"rgba(0, 0, 0, 0.2)\"がデフォルト値です。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "rgba(0, 0, 0, 0.2)",
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this dialog.[/en]\n[ja]このダイアログを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-preshow",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"preshow\" event is fired.[/en]\n[ja]\"preshow\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-prehide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"prehide\" event is fired.[/en]\n[ja]\"prehide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-postshow",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"postshow\" event is fired.[/en]\n[ja]\"postshow\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-posthide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"posthide\" event is fired.[/en]\n[ja]\"posthide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-destroy",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"destroy\" event is fired.[/en]\n[ja]\"destroy\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [
+    {
+      "name": "preshow",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.dialog",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.cancel",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Execute this function to stop the dialog from being shown.[/en]\n   [ja]この関数を実行すると、ダイアログの表示がキャンセルされます。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just before the dialog is displayed.[/en]\n[ja]ダイアログが表示される直前に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "postshow",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.dialog",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just after the dialog is displayed.[/en]\n[ja]ダイアログが表示された直後に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "prehide",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.dialog",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.cancel",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Execute this function to stop the dialog from being hidden.[/en]\n   [ja]この関数を実行すると、ダイアログの非表示がキャンセルされます。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just before the dialog is hidden.[/en]\n[ja]ダイアログが隠れる直前に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "posthide",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.dialog",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just after the dialog is hidden.[/en]\n[ja]ダイアログが隠れた後に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "onDeviceBackButton",
+      "type": "Object",
+      "description": "\n[en]Back-button handler.[/en]\n[ja]バックボタンハンドラ。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "visible",
+      "type": "Boolean",
+      "description": "\n[en]Whether the dialog is visible or not.[/en]\n[ja]要素が見える場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the dialog is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "cancelable",
+      "type": "Boolean",
+      "description": "\n[en]Whether the dialog is cancelable or not. A cancelable dialog can be closed by tapping the background or by pressing the back button on Android devices.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "show",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `\"none\"` and `\"slide\"`.[/en]\n   [ja]アニメーション名を指定します。\"none\", \"slide\"のいずれかを指定します。[/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}` [/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]This function is called after the dialog has been revealed.[/en]\n   [ja]ダイアログが表示され終わった後に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "Resolves to the displayed element."
+      },
+      "signature": "show([options])",
+      "description": "\n[en]Show the dialog.[/en]\n[ja]ダイアログを開きます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "hide",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `\"none\"` and `\"slide\"`.[/en]\n   [ja]アニメーション名を指定します。\"none\", \"slide\"のいずれかを指定できます。[/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`[/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]This functions is called after the dialog has been hidden.[/en]\n   [ja]ダイアログが隠れた後に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the hidden element[/en]\n   [ja][/ja]"
+      },
+      "signature": "hide([options])",
+      "description": "\n[en]Hide the dialog.[/en]\n[ja]ダイアログを閉じます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしイベントリスナーが指定されなかった場合には、そのイベントに紐付いているイベントリスナーが全て削除されます。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-dialog",
+      "path": "bindings/angular1/directives/dialog.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

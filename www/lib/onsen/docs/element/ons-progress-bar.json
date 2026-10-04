@@ -1,0 +1,96 @@
+{
+  "name": "ons-progress-bar",
+  "path": "core/src/elements/ons-progress-bar.js",
+  "category": "visual",
+  "description": "[en]\n  The component is used to display a linear progress bar. It can either display a progress bar that shows the user how much of a task has been completed. In the case where the percentage is not known it can be used to display an animated progress bar so the user can see that an operation is in progress.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/progress",
+  "examples": [
+    "\n<ons-progress-bar\n value=\"55\"\n secondary-value=\"87\">\n</ons-progress-bar>\n<ons-progress-bar\n indeterminate>\n</ons-progress-bar>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-progress-circular",
+      "description": "[en]The `<ons-progress-circular>` component displays a circular progress indicator.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Display a Material Design progress bar.[/en]\n   [ja]マテリアルデザインのスタイルでプログレスバーを表示します。[/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "zvQbGj"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]Change the appearance of the progress indicator.[/en]\n[ja]プログレスインジケータの見た目を変更します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "value",
+      "type": "Number",
+      "description": "\n[en]Current progress. Should be a value between 0 and 100.[/en]\n[ja]現在の進行状況の値を指定します。0から100の間の値を指定して下さい。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "secondary-value",
+      "type": "Number",
+      "description": "\n[en]Current secondary progress. Should be a value between 0 and 100.[/en]\n[ja]現在の２番目の進行状況の値を指定します。0から100の間の値を指定して下さい。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "indeterminate",
+      "type": null,
+      "description": "\n[en]If this attribute is set, an infinite looping animation will be shown.[/en]\n[ja]この属性が設定された場合、ループするアニメーションが表示されます。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "value",
+      "type": "Number",
+      "description": "\n[en]Current progress. Should be a value between 0 and 100.[/en]\n[ja]現在の進行状況の値を指定します。0から100の間の値を指定して下さい。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "secondaryValue",
+      "type": "Number",
+      "description": "\n[en]Current secondary progress. Should be a value between 0 and 100.[/en]\n[ja]現在の２番目の進行状況の値を指定します。0から100の間の値を指定して下さい。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "indeterminate",
+      "type": "Boolean",
+      "description": "\n[en]If this property is `true`, an infinite looping animation will be shown.[/en]\n[ja]この属性が設定された場合、ループするアニメーションが表示されます。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

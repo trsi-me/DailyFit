@@ -1,0 +1,117 @@
+{
+  "name": "ons-range",
+  "path": "core/src/elements/ons-range.js",
+  "category": "form",
+  "description": "[en]\n  Range input component. Used to display a draggable slider.\n  Works very similar to the `<input type=\"range\">` element.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/range",
+  "examples": [
+    "\n<ons-range value=\"20\"></ons-range>\n<ons-range modifier=\"material\" value=\"10\"></range>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-input",
+      "description": "[en]The `<ons-input>` component is used to display text inputs, radio buttons and checkboxes.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "theming.html#modifiers",
+      "description": "[en]More details about the `modifier` attribute[/en][ja]modifier属性の使い方[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Material Design slider[/en]\n   [ja][/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "xZQomM"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]Whether the element is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "value",
+      "type": "Number",
+      "description": "\n[en]Current value.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "focus",
+      "params": [],
+      "returns": null,
+      "signature": "focus()",
+      "description": "\n[en]Focuses the range.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "blur",
+      "params": [],
+      "returns": null,
+      "signature": "blur()",
+      "description": "\n[en]Removes focus from the range.[/en]\n[ja][/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-range",
+      "path": "bindings/angular2/src/directives/ons-range.ts",
+      "description": "[en]Angular directive for `<ons-range>` component.[/en]\n[ja]`<ons-range>`要素のAngularディレクティブです。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular2",
+      "overwrite": "",
+      "directive": "OnsRange",
+      "selector": "ons-range",
+      "examples": [
+        "\n<ons-range [(value)]=\"foo\"></ons-range>"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [
+    {
+      "name": "value",
+      "description": "\n[en]Input value of the `<ons-range>` element..[/en]\n[ja]`ons-range`要素に対する入力値を指定します。[/ja]",
+      "type": "{string}",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "valueChange",
+      "description": "\n[en]Triggers when the value is changed.[/en]\n[ja]値が変更された時に発火します。[/ja]",
+      "type": "{string}",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    }
+  ]
+}

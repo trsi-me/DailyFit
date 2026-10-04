@@ -1,0 +1,654 @@
+{
+  "name": "ons-carousel",
+  "path": "core/src/elements/ons-carousel.js",
+  "category": "carousel",
+  "description": "[en]\n  Carousel component. A carousel can be used to display several items in the same space.\n  The component supports displaying content both horizontally and vertically. The user can scroll through the items by dragging and it can also be controller programmatically.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/carousel",
+  "examples": [
+    "\n<ons-carousel style=\"width: 100%; height: 200px\">\n  <ons-carousel-item>\n   ...\n  </ons-carousel-item>\n  <ons-carousel-item>\n   ...\n  </ons-carousel-item>\n</ons-carousel>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-carousel-item",
+      "description": "[en]`<ons-carousel-item>` component[/en]\n   [ja]ons-carousel-itemコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "xbbzOQ"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "direction",
+      "type": "String",
+      "description": "\n[en]The direction of the carousel. Can be either \"horizontal\" or \"vertical\". Default is \"horizontal\".[/en]\n[ja]カルーセルの方向を指定します。\"horizontal\"か\"vertical\"を指定できます。\"horizontal\"がデフォルト値です。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "fullscreen",
+      "type": null,
+      "description": "\n[en]If this attribute is set the carousel will cover the whole screen.[/en]\n[ja]この属性があると、absoluteポジションを使ってカルーセルが自動的に画面いっぱいに広がります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "overscrollable",
+      "type": null,
+      "description": "\n[en]If this attribute is set the carousel will be scrollable over the edge. It will bounce back when released.[/en]\n[ja]この属性がある時、タッチやドラッグで端までスクロールした時に、バウンドするような効果が当たります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "centered",
+      "type": null,
+      "description": "\n[en]If this attribute is set the carousel then the selected item will be in the center of the carousel instead of the beginning. Useful only when the items are smaller than the carousel. [/en]\n[ja]この属性がある時、選んでいるons-carousel-itemはカルーセルの真ん中へ行きます。項目がカルーセルよりも小さい場合にのみ、これは便利です。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "item-width",
+      "type": "String",
+      "description": "\n[en]ons-carousel-item's width. Only works when the direction is set to \"horizontal\".[/en]\n[ja]ons-carousel-itemの幅を指定します。この属性は、direction属性に\"horizontal\"を指定した時のみ有効になります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "item-height",
+      "type": "String",
+      "description": "\n[en]ons-carousel-item's height. Only works when the direction is set to \"vertical\".[/en]\n[ja]ons-carousel-itemの高さを指定します。この属性は、direction属性に\"vertical\"を指定した時のみ有効になります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "auto-scroll",
+      "type": null,
+      "description": "\n[en]If this attribute is set the carousel will be automatically scrolled to the closest item border when released.[/en]\n[ja]この属性がある時、一番近いcarousel-itemの境界まで自動的にスクロールするようになります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "auto-scroll-ratio",
+      "type": "Number",
+      "description": "\n[en]A number between 0.0 and 1.0 that specifies how much the user must drag the carousel in order for it to auto scroll to the next item.[/en]\n[ja]0.0から1.0までの値を指定します。カルーセルの要素をどれぐらいの割合までドラッグすると次の要素に自動的にスクロールするかを指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "swipeable",
+      "type": null,
+      "description": "\n[en]If this attribute is set the carousel can be scrolled by drag or swipe.[/en]\n[ja]この属性がある時、カルーセルをスワイプやドラッグで移動できるようになります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]If this attribute is set the carousel is disabled.[/en]\n[ja]この属性がある時、dragやtouchやswipeを受け付けなくなります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "initial-index",
+      "type": "Number",
+      "description": "\n[en]Specify the index of the ons-carousel-item to show initially. Default is 0.[/en]\n[ja]最初に表示するons-carousel-itemを0始まりのインデックスで指定します。デフォルト値は 0 です。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "0",
+      "initonly": true
+    },
+    {
+      "name": "auto-refresh",
+      "type": null,
+      "description": "\n[en]When this attribute is set the carousel will automatically refresh when the number of child nodes change.[/en]\n[ja]この属性がある時、子要素の数が変わるとカルーセルは自動的に更新されるようになります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "animation",
+      "type": "String",
+      "description": "\n[en]If this attribute is set to `\"none\"` the transitions will not be animated.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "animation-options",
+      "type": "Expression",
+      "description": "\n[en]Specify the animation's duration, timing and delay with an object literal. E.g. `{duration: 0.2, delay: 1, timing: 'ease-in'}`.[/en]\n[ja]アニメーション時のduration, timing, delayをオブジェクトリテラルで指定します。例：{duration: 0.2, delay: 1, timing: 'ease-in'}[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this carousel.[/en]\n[ja]このカルーセルを参照するための変数名を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-postchange",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"postchange\" event is fired.[/en]\n[ja]\"postchange\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-refresh",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"refresh\" event is fired.[/en]\n[ja]\"refresh\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-overscroll",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"overscroll\" event is fired.[/en]\n[ja]\"overscroll\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-destroy",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"destroy\" event is fired.[/en]\n[ja]\"destroy\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [
+    {
+      "name": "postchange",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]\n   [ja]イベントオブジェクトです。[/ja]"
+        },
+        {
+          "name": "event.carousel",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Carousel object.[/en]\n   [ja]イベントが発火したCarouselオブジェクトです。[/ja]"
+        },
+        {
+          "name": "event.activeIndex",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Current active index.[/en]\n   [ja]現在アクティブになっている要素のインデックス。[/ja]"
+        },
+        {
+          "name": "event.lastActiveIndex",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Previous active index.[/en]\n   [ja]以前アクティブだった要素のインデックス。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just after the current carousel item has changed.[/en]\n[ja]現在表示しているカルーセルの要素が変わった時に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "refresh",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]\n   [ja]イベントオブジェクトです。[/ja]"
+        },
+        {
+          "name": "event.carousel",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Carousel object.[/en]\n   [ja]イベントが発火したCarouselオブジェクトです。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired when the carousel has been refreshed.[/en]\n[ja]カルーセルが更新された時に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "overscroll",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]\n   [ja]イベントオブジェクトです。[/ja]"
+        },
+        {
+          "name": "event.carousel",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Fired when the carousel has been refreshed.[/en]\n   [ja]カルーセルが更新された時に発火します。[/ja]"
+        },
+        {
+          "name": "event.activeIndex",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Current active index.[/en]\n   [ja]現在アクティブになっている要素のインデックス。[/ja]"
+        },
+        {
+          "name": "event.direction",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Can be one of either \"up\", \"down\", \"left\" or \"right\".[/en]\n   [ja]オーバースクロールされた方向が得られます。\"up\", \"down\", \"left\", \"right\"のいずれかの方向が渡されます。[/ja]"
+        },
+        {
+          "name": "event.waitToReturn",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Takes a <code>Promise</code> object as an argument. The carousel will not scroll back until the promise has been resolved or rejected.[/en]\n   [ja]この関数はPromiseオブジェクトを引数として受け取ります。渡したPromiseオブジェクトがresolveされるかrejectされるまで、カルーセルはスクロールバックしません。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired when the carousel has been overscrolled.[/en]\n[ja]カルーセルがオーバースクロールした時に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "itemCount",
+      "type": "Number",
+      "description": "\n[en]The number of carousel items.[/en]\n[ja]カルーセル要素の数です。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "swipeable",
+      "type": "Boolean",
+      "description": "\n[en]true if the carousel is swipeable.[/en]\n[ja]swipeableであればtrueを返します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "onSwipe",
+      "type": "Function",
+      "description": "\n[en]Hook called whenever the user slides the carousel. It gets a decimal index and an animationOptions object as arguments.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "autoScroll",
+      "type": "Boolean",
+      "description": "\n[en]true if auto scroll is enabled.[/en]\n[ja]オートスクロールが有効であればtrueを返します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "autoScrollRatio",
+      "type": "Number",
+      "description": "\n[en]The current auto scroll ratio. [/en]\n[ja]現在のオートスクロールのratio値。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the carousel is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "overscrollable",
+      "type": "Boolean",
+      "description": "\n[en]Whether the carousel is overscrollable or not.[/en]\n[ja]overscrollできればtrueを返します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "centered",
+      "type": "Boolean",
+      "description": "\n[en]Whether the carousel is centered or not.[/en]\n[ja]centered状態になっていればtrueを返します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "setActiveIndex",
+      "params": [
+        {
+          "name": "index",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]The index that the carousel should be set to.[/en]\n   [ja]carousel要素のインデックスを指定します。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]A function that will be called after the animation is finished.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]If this attribute is set to `\"none\"` the transitions will not be animated.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]An object that can be used to specify duration, delay and timing function of the animation.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the carousel element.[/en]\n   [ja][/ja]"
+      },
+      "signature": "setActiveIndex(index, [options])",
+      "description": "\n[en]Specify the index of the `<ons-carousel-item>` to show.[/en]\n[ja]表示するons-carousel-itemをindexで指定します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "getActiveIndex",
+      "params": [],
+      "returns": {
+        "type": "Number",
+        "description": "[en]The current carousel item index.[/en]\n   [ja]現在表示しているカルーセル要素のインデックスが返されます。[/ja]"
+      },
+      "signature": "getActiveIndex()",
+      "description": "\n[en]Returns the index of the currently visible `<ons-carousel-item>`.[/en]\n[ja]現在表示されているons-carousel-item要素のインデックスを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "next",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]A function that will be executed after the animation has finished.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]If this attribute is set to `\"none\"` the transitions will not be animated.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]An object that can be used to specify the duration, delay and timing function of the animation.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the carousel element[/en]\n   [ja][/ja]"
+      },
+      "signature": "next([options])",
+      "description": "\n[en]Show next `<ons-carousel-item>`.[/en]\n[ja]次のons-carousel-itemを表示します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "prev",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]A function that will be executed after the animation has finished.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]If this attribute is set to `\"none\"` the transitions will not be animated.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]An object that can be used to specify the duration, delay and timing function of the animation.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the carousel element[/en]\n   [ja][/ja]"
+      },
+      "signature": "prev([options])",
+      "description": "\n[en]Show previous `<ons-carousel-item>`.[/en]\n[ja]前のons-carousel-itemを表示します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "first",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]A function that will be executed after the animation has finished.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]If this is set to `\"none\"`, the transitions will not be animated.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]An object that can be used to specify the duration, delay and timing function of the animation.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the carousel element[/en]\n   [ja][/ja]"
+      },
+      "signature": "first()",
+      "description": "\n[en]Show first `<ons-carousel-item>`.[/en]\n[ja]最初のons-carousel-itemを表示します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "last",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]A function that will be executed after the animation has finished.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]If this attribute is set to `\"none\"` the transitions will not be animated.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]An object that can be used to specify the duration, delay and timing function of the animation.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the carousel element[/en]\n   [ja]Resolves to the carousel element[/ja]"
+      },
+      "signature": "last()",
+      "description": "\n[en]Show last ons-carousel item.[/en]\n[ja]最後のons-carousel-itemを表示します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "refresh",
+      "params": [],
+      "returns": null,
+      "signature": "refresh()",
+      "description": "\n[en]Update the layout of the carousel. Used when adding `<ons-carousel-items>` dynamically or to automatically adjust the size.[/en]\n[ja]レイアウトや内部の状態を最新のものに更新します。ons-carousel-itemを動的に増やしたり、ons-carouselの大きさを動的に変える際に利用します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしイベントリスナーが指定されなかった場合には、そのイベントに紐付いているイベントリスナーが全て削除されます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-carousel",
+      "path": "bindings/angular1/directives/carousel.js",
+      "description": "[en]Carousel component.[/en]\n[ja]カルーセルを表示できるコンポーネント。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [
+        "\n<ons-carousel style=\"width: 100%; height: 200px\">\n  <ons-carousel-item>\n   ...\n  </ons-carousel-item>\n  <ons-carousel-item>\n   ...\n  </ons-carousel-item>\n</ons-carousel>"
+      ],
+      "seealsos": [],
+      "guides": [
+        {
+          "name": "UsingCarousel",
+          "description": "[en]Learn how to use the carousel component.[/en]\n   [ja]carouselコンポーネントの使い方[/ja]"
+        }
+      ],
+      "codepens": [
+        {
+          "isWide": false,
+          "id": "xbbzOQ"
+        }
+      ]
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

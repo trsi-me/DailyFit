@@ -1,0 +1,47 @@
+{
+  "name": "ons-row",
+  "path": "core/src/elements/ons-row.js",
+  "category": "grid",
+  "description": "[en]Represents a row in the grid system. Use with `<ons-col>` to layout components.[/en]\n[ja]グリッドシステムにて行を定義します。ons-colとともに使用し、コンポーネントの配置に使用します。[/ja]",
+  "deprecated": false,
+  "note": "\n[en]For Android 4.3 and earlier, and iOS6 and earlier, when using mixed alignment with ons-row and ons-col, they may not be displayed correctly. You can use only one vertical-align.[/en]\n[ja]Android 4.3以前、もしくはiOS 6以前のOSの場合、ons-rowとons-colを組み合わせてそれぞれのons-col要素のvertical-align属性の値に別々の値を指定すると、描画が崩れる場合があります。vertical-align属性の値には一つの値だけを指定できます。[/ja]",
+  "examples": [
+    "\n<ons-row>\n  <ons-col width=\"50px\"><ons-icon icon=\"fa-twitter\"></ons-icon></ons-col>\n  <ons-col>Text</ons-col>\n</ons-row>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-col",
+      "description": "[en]The `<ons-col>` component is used as children of `<ons-row>`.[/en]\n   [ja]ons-colコンポーネント[/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "features.html",
+      "description": "[en]Layouting guide[/en]\n   [ja]レイアウト調整[/ja]"
+    }
+  ],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": true,
+      "id": "GgujC"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "vertical-align",
+      "type": "String",
+      "description": "\n[en]Short hand attribute for aligning vertically. Valid values are top, bottom, and center.[/en]\n[ja]縦に整列するために指定します。top、bottom、centerのいずれかを指定できます。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

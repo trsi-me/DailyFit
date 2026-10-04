@@ -1,0 +1,111 @@
+{
+  "name": "ons.modifier",
+  "path": "core/src/ons/modifier.js",
+  "category": "visual",
+  "description": "\n[en]\n  Utility methods to change modifier attributes of Onsen UI elements..\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "examples": [
+    "\nons.modifier.add(myOnsInputElement, 'underbar');\nons.modifier.toggle(myOnsToastElement, 'custom-modifier');"
+  ],
+  "seealsos": [],
+  "guides": [],
+  "codepens": [],
+  "events": [],
+  "properties": [],
+  "methods": [
+    {
+      "name": "add",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLElement",
+          "isOptional": false,
+          "description": "[en]Target element.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "modifier",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the modifier.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "add(element, modifier [, modifier])",
+      "description": "\n[en]Add the specified modifiers to the element if they are not already included.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "remove",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLElement",
+          "isOptional": false,
+          "description": "[en]Target element.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "modifier",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the modifier.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "remove(element, modifier [, modifier])",
+      "description": "\n[en]Remove the specified modifiers from the element if they are included.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "contains",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLElement",
+          "isOptional": false,
+          "description": "[en]Target element.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "modifier",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the modifier.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": "[en]`true` when the specified modifier is found in the element's `modifier` attribute. `false` otherwise.[/en]\n   [ja][/ja]"
+      },
+      "signature": "contains(element, modifier)",
+      "description": "\n[en]Check whether the specified modifier is included in the element.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "toggle",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLElement",
+          "isOptional": false,
+          "description": "[en]Target element.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "modifier",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the modifier.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "force",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]If it evaluates to true, add specified modifier value, and if it evaluates to false, remove it.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "toggle(element, modifier [, force])",
+      "description": "\n[en]Toggle the specified modifier.[/en]\n[ja][/ja]",
+      "deprecated": false
+    }
+  ],
+  "objects": []
+}

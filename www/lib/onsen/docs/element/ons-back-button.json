@@ -1,0 +1,87 @@
+{
+  "name": "ons-back-button",
+  "path": "core/src/elements/ons-back-button.js",
+  "category": "navigation",
+  "description": "[en]\n  Back button component for `<ons-toolbar>`. Put it in the left part of the `<ons-toolbar>`.\n  It will find the parent `<ons-navigator>` element and pop a page when clicked. This behavior can be overriden by specifying the `onClick` property.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/back-button",
+  "examples": [
+    "\n<ons-toolbar>\n  <div class=\"left\">\n    <ons-back-button>Back</ons-back-button>\n  </div>\n  <div class=\"center\">\n    Title\n  <div>\n</ons-toolbar>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-toolbar",
+      "description": "[en]ons-toolbar component[/en]\n   [ja]ons-toolbarコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-navigator",
+      "description": "[en]ons-navigator component[/en]\n   [ja]ons-navigatorコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Material Design style[/en]\n   [ja][/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "aHmGL"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the back button.[/en]\n[ja]バックボタンの見た目を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "options",
+      "type": "Object",
+      "description": "\n[en]Options object.[/en]\n[ja]オプションを指定するオブジェクト。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options.animation",
+      "type": "String",
+      "description": "\n[en]Animation name. Available animations are \"slide\", \"lift\", \"fade\" and \"none\".\n  These are platform based animations. For fixed animations, add \"-ios\" or \"-md\"\n  suffix to the animation name. E.g. \"lift-ios\", \"lift-md\". Defaults values are \"slide-ios\" and \"fade-md\".\n[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options.animationOptions",
+      "type": "String",
+      "description": "\n[en]Specify the animation's duration, delay and timing. E.g.  `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`[/en]\n[ja]アニメーション時のduration, delay, timingを指定します。e.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}` [/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options.callback",
+      "type": "String",
+      "description": "\n[en]Function that is called when the transition has ended.[/en]\n[ja]このメソッドによる画面遷移が終了した際に呼び出される関数オブジェクトを指定します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "onClick",
+      "type": "Function",
+      "description": "\n[en]Used to override the default back button behavior.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

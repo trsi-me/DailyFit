@@ -1,0 +1,122 @@
+{
+  "name": "ons.orientation",
+  "path": "core/src/ons/orientation.js",
+  "category": "util",
+  "description": "\n[en]Utility methods for orientation detection.[/en]\n[ja]画面のオリエンテーション検知のためのユーティリティメソッドを収めているオブジェクトです。[/ja]",
+  "deprecated": false,
+  "examples": [],
+  "seealsos": [],
+  "guides": [],
+  "codepens": [],
+  "events": [
+    {
+      "name": "change",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]\n   [ja]イベントオブジェクトです。[/ja]"
+        },
+        {
+          "name": "event.isPortrait",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]Will be true if the current orientation is portrait mode.[/en]\n   [ja]現在のオリエンテーションがportraitの場合にtrueを返します。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired when the device orientation changes.[/en]\n[ja]デバイスのオリエンテーションが変化した際に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [],
+  "methods": [
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]このイベントが発火された際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]削除するイベントリスナーを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしイベントリスナーを指定しなかった場合には、そのイベントに紐づく全てのイベントリスナーが削除されます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isPortrait",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": "[en]Will be true if the current orientation is portrait mode.[/en]\n   [ja]オリエンテーションがportraitモードの場合にtrueになります。[/ja]"
+      },
+      "signature": "isPortrait()",
+      "description": "\n[en]Returns whether the current screen orientation is portrait or not.[/en]\n[ja]オリエンテーションがportraitモードかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isLandscape",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": "[en]Will be true if the current orientation is landscape mode.[/en]\n   [ja]オリエンテーションがlandscapeモードの場合にtrueになります。[/ja]"
+      },
+      "signature": "isLandscape()",
+      "description": "\n[en]Returns whether the current screen orientation is landscape or not.[/en]\n[ja]オリエンテーションがlandscapeモードかどうかを返します。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "objects": []
+}

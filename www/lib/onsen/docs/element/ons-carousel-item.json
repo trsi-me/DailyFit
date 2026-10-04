@@ -1,0 +1,32 @@
+{
+  "name": "ons-carousel-item",
+  "path": "core/src/elements/ons-carousel-item.js",
+  "category": "carousel",
+  "description": "[en]\n  Carousel item component. Used as a child of the `<ons-carousel>` element.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/carousel",
+  "examples": [
+    "\n<ons-carousel style=\"width: 100%; height: 200px\">\n  <ons-carousel-item>\n   ...\n  </ons-carousel-item>\n  <ons-carousel-item>\n   ...\n  </ons-carousel-item>\n</ons-carousel>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-carousel",
+      "description": "[en]`<ons-carousel>` components[/en]\n   [ja]<ons-carousel>コンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "xbbzOQ"
+    }
+  ],
+  "attributes": [],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

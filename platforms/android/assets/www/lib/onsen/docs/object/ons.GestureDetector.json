@@ -1,0 +1,779 @@
+{
+  "name": "ons.GestureDetector",
+  "path": "core/src/ons/gesture-detector.js",
+  "category": "gesture",
+  "description": "\n[en]Utility class for gesture detection.[/en]\n[ja]ジェスチャを検知するためのユーティリティクラスです。[/ja]",
+  "deprecated": false,
+  "examples": [],
+  "seealsos": [],
+  "guides": [],
+  "codepens": [],
+  "events": [
+    {
+      "name": "drag",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "dragstart",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "dragend",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "drapleft",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "dragright",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "dragup",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "dragdown",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "gesture",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "hold",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "release",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "swipe",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "swipeleft",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "swiperight",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "swipeup",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "swipedown",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "tap",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "doubletap",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "touch",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "transform",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "transformstart",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "transformend",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "pinchin",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "pinchout",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "rotate",
+      "params": [
+        {
+          "name": "ev",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "defaults",
+      "type": "Object",
+      "description": "\ndefault settings.\nmore settings are defined per gesture at `/gestures`. Each gesture can be disabled/enabled\nby setting it's name (like `swipe`) to false.\nYou can set the defaults for all instances by changing this object before creating an instance.",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "DOCUMENT",
+      "type": "HTMLElement",
+      "description": "\nGestureDetector document where the base events are added at",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "HAS_POINTEREVENTS",
+      "type": "Boolean",
+      "description": "\ndetect support for pointer events",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "HAS_TOUCHEVENTS",
+      "type": "Boolean",
+      "description": "\ndetect support for touch events",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "IS_MOBILE",
+      "type": "Boolean",
+      "description": "\ndetect mobile browsers",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "NO_MOUSEEVENTS",
+      "type": "Boolean",
+      "description": "\ndetect if we want to support mouseevents at all",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "CALCULATE_INTERVAL",
+      "type": "Number",
+      "description": "\ninterval in which GestureDetector recalculates current velocity/direction/angle in ms",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "EVENT_TYPES",
+      "type": "Object",
+      "description": "\neventtypes per touchevent (start, move, end) are filled by `Event.determineEventTypes` on `setup`\nthe object contains the DOM event names per type (`EVENT_START`, `EVENT_MOVE`, `EVENT_END`)",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "DIRECTION_DOWN|LEFT|UP|RIGHT",
+      "type": "String",
+      "description": "\ndirection strings, for safe comparisons",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "POINTER_MOUSE|TOUCH|PEN",
+      "type": "String",
+      "description": "\npointertype strings, for safe comparisons",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "EVENT_START|MOVE|END|RELEASE|TOUCH",
+      "type": "String",
+      "description": "\neventtypes",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "READY",
+      "type": "Boolean",
+      "description": "\nif the window events are set...",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "plugins",
+      "type": "Object",
+      "description": "\nplugins namespace",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "gestures",
+      "type": "Object",
+      "description": "\ngestures namespace\nsee `/gestures` for the definitions",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "prevent_mouseevents",
+      "type": "Boolean",
+      "description": "\nwhen touch events have been fired, this is true\nthis is used to stop mouse events",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "started",
+      "type": "Boolean",
+      "description": "\nif EVENT_START has been fired",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "should_detect",
+      "type": "Boolean",
+      "description": "\nwhen the mouse is hold down, this is true",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "pointers",
+      "type": "Object",
+      "description": "\nholds all pointers, by `identifier`",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "element",
+      "type": "HTMLElement",
+      "description": "",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "enabled",
+      "type": "Boolean",
+      "description": "",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options",
+      "type": "Object",
+      "description": "\noptions, merged with the defaults\noptions with an _ are converted to camelCase",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "eventStartHandler",
+      "type": "Object",
+      "description": "\nevent start handler on the element to start the detection",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "eventHandlers",
+      "type": "Array",
+      "description": "\nkeep a list of user event handlers which needs to be removed when calling 'dispose'",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "dragMinDistance",
+      "type": "Number",
+      "description": "\nminimal movement that have to be made before the drag event gets triggered",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "dragDistanceCorrection",
+      "type": "Boolean",
+      "description": "\nSet dragDistanceCorrection to true to make the starting point of the drag\nbe calculated from where the drag was triggered, not from where the touch started.\nUseful to avoid a jerk-starting drag, which can make fine-adjustments\nthrough dragging difficult, and be visually unappealing.",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "dragMaxTouches",
+      "type": "Number",
+      "description": "\nset 0 for unlimited, but this can conflict with transform",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "dragBlockHorizontal",
+      "type": "Boolean",
+      "description": "\nprevent default browser behavior when dragging occurs\nbe careful with it, it makes the element a blocking element\nwhen you are using the drag gesture, it is a good practice to set this true",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "dragBlockVertical",
+      "type": "Boolean",
+      "description": "\nsame as `dragBlockHorizontal`, but for vertical movement",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "dragLockToAxis",
+      "type": "Boolean",
+      "description": "\ndragLockToAxis keeps the drag gesture on the axis that it started on,\nIt disallows vertical directions if the initial direction was horizontal, and vice versa.",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "dragLockMinDistance",
+      "type": "Number",
+      "description": "\ndrag lock only kicks in when distance > dragLockMinDistance\nThis way, locking occurs only when the distance has become large enough to reliably determine the direction",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "holdTimeout",
+      "type": "Number",
+      "description": "",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "holdThreshold",
+      "type": "Number",
+      "description": "\nmovement allowed while holding",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "swipeMinTouches",
+      "type": "Number",
+      "description": "",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "swipeMaxTouches",
+      "type": "Number",
+      "description": "",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "swipeVelocityX",
+      "type": "Number",
+      "description": "\nhorizontal swipe velocity",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "swipeVelocityY",
+      "type": "Number",
+      "description": "\nvertical swipe velocity",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "tapMaxTime",
+      "type": "Number",
+      "description": "\nmax time of a tap, this is for the slow tappers",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "tapMaxDistance",
+      "type": "Number",
+      "description": "\nmax distance of movement of a tap, this is for the slow tappers",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "tapAlways",
+      "type": "Boolean",
+      "description": "\nalways trigger the `tap` event, even while double-tapping",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "doubleTapDistance",
+      "type": "Number",
+      "description": "\nmax distance between two taps",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "doubleTapInterval",
+      "type": "Number",
+      "description": "\nmax time between two taps",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "preventDefault",
+      "type": "Boolean",
+      "description": "\ncall preventDefault at touchstart, and makes the element blocking by disabling the scrolling of the page,\nbut it improves gestures like transforming and dragging.\nbe careful with using this, it can be very annoying for users to be stuck on the page",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "preventMouse",
+      "type": "Boolean",
+      "description": "\ndisable mouse events, so only touch (or pen!) input triggers events",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "transformMinScale",
+      "type": "Number",
+      "description": "\nminimal scale factor, no scale is 1, zoomin is to 0 and zoomout until higher then 1",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "transformMinRotation",
+      "type": "Number",
+      "description": "\nrotation in degrees",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "constructor",
+      "params": [
+        {
+          "name": "element",
+          "type": "Element",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]ジェスチャを検知するDOM要素を指定します。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Options object.[/en]\n   [ja]オプションを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "ons.GestureDetector.Instance",
+        "description": ""
+      },
+      "signature": "constructor(element[, options])",
+      "description": "\n[en]Create a new GestureDetector instance.[/en]\n[ja]GestureDetectorのインスタンスを生成します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "gestures",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]A space separated list of gestures.[/en]\n   [ja]検知するジェスチャ名を指定します。スペースで複数指定することができます。[/ja]"
+        },
+        {
+          "name": "handler",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]An event handling function.[/en]\n   [ja]イベントハンドラとなる関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "on(gestures, handler)",
+      "description": "\n[en]Adds an event handler for a gesture. Available gestures are: drag, dragleft, dragright, dragup, dragdown, hold, release, swipe, swipeleft, swiperight, swipeup, swipedown, tap, doubletap, touch, transform, pinch, pinchin, pinchout and rotate. [/en]\n[ja]ジェスチャに対するイベントハンドラを追加します。指定できるジェスチャ名は、drag dragleft dragright dragup dragdown hold release swipe swipeleft swiperight swipeup swipedown tap doubletap touch transform pinch pinchin pinchout rotate です。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "gestures",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]A space separated list of gestures.[/en]\n   [ja]ジェスチャ名を指定します。スペースで複数指定することができます。[/ja]"
+        },
+        {
+          "name": "handler",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]An event handling function.[/en]\n   [ja]イベントハンドラとなる関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "off(gestures, handler)",
+      "description": "\n[en]Remove an event listener.[/en]\n[ja]イベントリスナーを削除します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "trigger",
+      "params": [
+        {
+          "name": "gesture",
+          "type": "String",
+          "isOptional": false,
+          "description": ""
+        },
+        {
+          "name": "eventData",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "returns": null,
+      "signature": "trigger(gesture, eventData)",
+      "description": "\ntrigger gesture event",
+      "deprecated": false
+    },
+    {
+      "name": "enable",
+      "params": [
+        {
+          "name": "state",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]Specify if it should be enabled or not.[/en]\n   [ja]有効にするかどうかを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "enable(state)",
+      "description": "\n[en]Enable or disable gesture detection.[/en]\n[ja]ジェスチャ検知を有効化/無効化します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "dispose",
+      "params": [],
+      "returns": null,
+      "signature": "dispose()",
+      "description": "\n[en]Remove and destroy all event handlers for this instance.[/en]\n[ja]このインスタンスでのジェスチャの検知や、イベントハンドラを全て解除して廃棄します。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "objects": []
+}

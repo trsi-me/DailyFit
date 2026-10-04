@@ -1,0 +1,683 @@
+{
+  "name": "ons-navigator",
+  "path": "core/src/elements/ons-navigator/index.js",
+  "category": "navigation",
+  "description": "[en]\n  A component that provides page stack management and navigation. Stack navigation is the most common navigation pattern for mobile apps.\n  When a page is pushed on top of the stack it is displayed with a transition animation. When the user returns to the previous page the top page will be popped from the top of the stack and hidden with an opposite transition animation.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/navigator",
+  "examples": [
+    "\n<ons-navigator id=\"navigator\">\n  <ons-page>\n    <ons-toolbar>\n      <div class=\"center\">\n        Title\n      </div>\n    </ons-toolbar>\n    <p>\n      <ons-button\n        onclick=\"document.getElementById('navigator').pushPage('page.html')\">\n        Push page\n      </ons-button>\n    </p>\n  </ons-page>\n</ons-navigator>\n<template id=\"page.html\">\n  <ons-page>\n    <ons-toolbar>\n      <div class=\"left\">\n        <ons-back-button>Back</ons-back-button>\n      </div>\n      <div class=\"center\">\n        Another page\n      </div>\n    </ons-toolbar>\n  </ons-page>\n</template>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-toolbar",
+      "description": "[en]The `<ons-toolbar>` component is used to display a toolbar on the top of a page.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "ons-back-button",
+      "description": "[en]The `<ons-back-button>` component lets the user return to the previous page.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "lifecycle.html#events",
+      "description": "[en]Overview of page events[/en]\n   [ja]Overview of page events[/ja]"
+    }
+  ],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "yrhtv"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "page",
+      "type": "String",
+      "description": "\n[en]First page to show when navigator is initialized.[/en]\n[ja]ナビゲーターが初期化された時に表示するページを指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "swipeable",
+      "type": "Boolean",
+      "description": "\n[en]Enable iOS \"swipe to pop\" feature.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "swipe-target-width",
+      "type": "String",
+      "description": "\n[en]The width of swipeable area calculated from the edge (in pixels). Use this to enable swipe only when the finger touch on the screen edge.[/en]\n[ja]スワイプの判定領域をピクセル単位で指定します。画面の端から指定した距離に達するとページが表示されます。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "20px",
+      "initonly": false
+    },
+    {
+      "name": "swipe-threshold",
+      "type": "Number",
+      "description": "\n[en]Specify how much the page needs to be swiped before popping. A value between `0` and `1`.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "0.2",
+      "initonly": false
+    },
+    {
+      "name": "animation",
+      "type": "String",
+      "description": "\n[en]\n  Animation name. Available animations are `\"slide\"`, `\"lift\"`, `\"fade\"` and `\"none\"`.\n  These are platform based animations. For fixed animations, add `\"-ios\"` or `\"-md\"` suffix to the animation name. E.g. `\"lift-ios\"`, `\"lift-md\"`. Defaults values are `\"slide-ios\"` and `\"fade-md\"` depending on the platform.\n[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "default",
+      "initonly": false
+    },
+    {
+      "name": "animation-options",
+      "type": "Expression",
+      "description": "\n[en]Specify the animation's duration, timing and delay with an object literal. E.g. `{duration: 0.2, delay: 1, timing: 'ease-in'}`[/en]\n[ja]アニメーション時のduration, timing, delayをオブジェクトリテラルで指定します。e.g. `{duration: 0.2, delay: 1, timing: 'ease-in'}`[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this navigator.[/en]\n[ja]このナビゲーターを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-prepush",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"prepush\" event is fired.[/en]\n[ja]\"prepush\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-prepop",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"prepop\" event is fired.[/en]\n[ja]\"prepop\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-postpush",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"postpush\" event is fired.[/en]\n[ja]\"postpush\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-postpop",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"postpop\" event is fired.[/en]\n[ja]\"postpop\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-init",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when a page's \"init\" event is fired.[/en]\n[ja]ページの\"init\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-show",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when a page's \"show\" event is fired.[/en]\n[ja]ページの\"show\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-hide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when a page's \"hide\" event is fired.[/en]\n[ja]ページの\"hide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-destroy",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when a page's \"destroy\" event is fired.[/en]\n[ja]ページの\"destroy\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [
+    {
+      "name": "prepush",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.navigator",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.currentPage",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Current page object.[/en]\n   [ja]現在のpageオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.cancel",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Call this function to cancel the push.[/en]\n   [ja]この関数を呼び出すと、push処理がキャンセルされます。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just before a page is pushed.[/en]\n[ja]pageがpushされる直前に発火されます。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "prepop",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.navigator",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.currentPage",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Current page object.[/en]\n   [ja]現在のpageオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.cancel",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Call this function to cancel the pop.[/en]\n   [ja]この関数を呼び出すと、pageのpopがキャンセルされます。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just before a page is popped.[/en]\n[ja]pageがpopされる直前に発火されます。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "postpush",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.navigator",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.enterPage",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Object of the next page.[/en]\n   [ja]pushされたpageオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.leavePage",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Object of the previous page.[/en]\n   [ja]以前のpageオブジェクト。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just after a page is pushed.[/en]\n[ja]pageがpushされてアニメーションが終了してから発火されます。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "postpop",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]"
+        },
+        {
+          "name": "event.navigator",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Component object.[/en]\n   [ja]コンポーネントのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.enterPage",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Object of the next page.[/en]\n   [ja]popされて表示されるページのオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.leavePage",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Object of the previous page.[/en]\n   [ja]popされて消えるページのオブジェクト。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fired just after a page is popped.[/en]\n[ja]pageがpopされてアニメーションが終わった後に発火されます。[/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "pageLoader",
+      "type": "PageLoader",
+      "description": "\n[en]PageLoader instance. It can be overriden to change the way pages are loaded by this element. Useful for lib developers.[/en]\n[ja]PageLoaderインスタンスを格納しています。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "page",
+      "type": "*",
+      "description": "\n[en]Specify the page to be loaded during initialization. This value takes precedence over the `page` attribute. Useful for lib developers.[/en]\n[ja]初期化時に読み込むページを指定します。`page`属性で指定した値よりも`page`プロパティに指定した値を優先します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "onDeviceBackButton",
+      "type": "Object",
+      "description": "\n[en]Back-button handler.[/en]\n[ja]バックボタンハンドラ。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "topPage",
+      "type": "HTMLElement",
+      "description": "\n[en]Current top page element. Use this method to access options passed by `pushPage()`-like methods.[/en]\n[ja]現在のページを取得します。pushPage()やresetToPage()メソッドの引数を取得できます。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "pages",
+      "type": "Array",
+      "description": "\n[en]Copy of the navigator's page stack.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "onSwipe",
+      "type": "Function",
+      "description": "\n[en]Hook called whenever the user slides the navigator (swipe-to-pop). It gets a decimal ratio (0-1) and an animationOptions object as arguments.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options",
+      "type": "Object",
+      "description": "\n[en]Default options object. Attributes have priority over this property.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options.animation",
+      "type": "String",
+      "description": "\n[en]\n  Animation name. Available animations are `\"slide\"`, `\"lift\"`, `\"fade\"` and `\"none\"`.\n  These are platform based animations. For fixed animations, add `\"-ios\"` or `\"-md\"` suffix to the animation name. E.g. `\"lift-ios\"`, `\"lift-md\"`. Defaults values are `\"slide-ios\"` and `\"fade-md\"`.\n[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options.animationOptions",
+      "type": "String",
+      "description": "\n[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n[ja]アニメーション時のduration, delay, timingを指定します。e.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}` [/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "options.callback",
+      "type": "String",
+      "description": "\n[en]Function that is called when the transition has ended.[/en]\n[ja]このメソッドによる画面遷移が終了した際に呼び出される関数オブジェクトを指定します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "popPage",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]\n     Animation name. Available animations are `\"slide\"`, `\"lift\"`, `\"fade\"` and `\"none\"`.\n     These are platform based animations. For fixed animations, add `\"-ios\"` or `\"-md\"` suffix to the animation name. E.g. `\"lift-ios\"`, `\"lift-md\"`. Defaults values are `\"slide-ios\"` and `\"fade-md\"`.\n   [/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. {duration: 0.2, delay: 0.4, timing: 'ease-in'}[/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function that is called when the transition has ended.[/en]\n   [ja]このメソッドによる画面遷移が終了した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        },
+        {
+          "name": "options.data",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Custom data that will be stored in the new page element.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.times",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Number of pages to be popped. Only one animation will be shown.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise which resolves to the revealed page.[/en]\n   [ja]明らかにしたページを解決するPromiseを返します。[/ja]"
+      },
+      "signature": "popPage([options])",
+      "description": "\n[en]Pops the current page from the page stack. The previous page will be displayed.[/en]\n[ja]現在表示中のページをページスタックから取り除きます。一つ前のページに戻ります。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "pushPage",
+      "params": [
+        {
+          "name": "page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page URL. Can be either a HTML document or a template defined with the `<template>` tag.[/en]\n   [ja]pageのURLか、もしくは`<template>`で宣言したテンプレートのid属性の値を指定できます。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page URL. Only necessary if `page` parameter is null or undefined.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.pageHTML",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]HTML code that will be computed as a new page. Overwrites `page` parameter.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]\n     Animation name. Available animations are `\"slide\"`, `\"lift\"`, `\"fade\"` and `\"none\"`.\n     These are platform based animations. For fixed animations, add `\"-ios\"` or `\"-md\"` suffix to the animation name. E.g. `\"lift-ios\"`, `\"lift-md\"`. Defaults values are `\"slide-ios\"` and `\"fade-md\"`.\n   [/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}` [/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function that is called when the transition has ended.[/en]\n   [ja]pushPage()による画面遷移が終了した時に呼び出される関数オブジェクトを指定します。[/ja]"
+        },
+        {
+          "name": "options.data",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Custom data that will be stored in the new page element.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise which resolves to the pushed page.[/en]\n   [ja]追加したページを解決するPromiseを返します。[/ja]"
+      },
+      "signature": "pushPage(page, [options])",
+      "description": "\n[en]Pushes the specified page into the stack.[/en]\n[ja]指定したpageを新しいページスタックに追加します。新しいページが表示されます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "replacePage",
+      "params": [],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise which resolves to the new page.[/en]\n   [ja]新しいページを解決するPromiseを返します。[/ja]"
+      },
+      "signature": "replacePage(page, [options])",
+      "description": "\n[en]Replaces the current top page with the specified one. Extends `pushPage()` parameters.[/en]\n[ja]現在表示中のページをを指定したページに置き換えます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "insertPage",
+      "params": [
+        {
+          "name": "index",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]The index where it should be inserted.[/en]\n   [ja]スタックに挿入する位置のインデックスを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise which resolves to the inserted page.[/en]\n   [ja]指定したページを解決するPromiseを返します。[/ja]"
+      },
+      "signature": "insertPage(index, page, [options])",
+      "description": "\n[en]Insert the specified page into the stack with at a position defined by the `index` argument. Extends `pushPage()` parameters.[/en]\n[ja]指定したpageをページスタックのindexで指定した位置に追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "removePage",
+      "params": [
+        {
+          "name": "index",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]The index where it should be removed.[/en]\n   [ja]スタックから削除するページのインデックスを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise which resolves to the revealed page.[/en]\n   [ja]削除によって表示されたページを解決するPromiseを返します。[/ja]"
+      },
+      "signature": "removePage(index, [options])",
+      "description": "\n[en]Remove the specified page at a position in the stack defined by the `index` argument. Extends `popPage()` parameters.[/en]\n[ja]指定したインデックスにあるページを削除します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "resetToPage",
+      "params": [
+        {
+          "name": "options.pop",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]Performs 'pop' effect if `true` instead of 'push' or none. This also sets `options.animation` value to `default` instead of `none`.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise which resolves to the new top page.[/en]\n   [ja]新しいトップページを解決するPromiseを返します。[/ja]"
+      },
+      "signature": "resetToPage(page, [options])",
+      "description": "\n[en]Clears page stack and adds the specified page to the stack. Extends `pushPage()` parameters.[/en]\n[ja]ページスタックをリセットし、指定したページを表示します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "bringPageTop",
+      "params": [
+        {
+          "name": "item",
+          "type": "String|Number",
+          "isOptional": false,
+          "description": "[en]Page URL or index of an existing page in navigator's stack.[/en]\n   [ja]ページのURLかもしくはons-navigatorのページスタックのインデックス値を指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise which resolves to the new top page.[/en]\n   [ja]新しいトップページを解決するPromiseを返します。[/ja]"
+      },
+      "signature": "bringPageTop(item, [options])",
+      "description": "\n[en]Brings the given page to the top of the page stack if it already exists or pushes it into the stack if doesn't. Extends `pushPage()` parameters.[/en]\n[ja]指定したページをページスタックの一番上に移動します。もし指定したページが無かった場合新しくpushされます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]このイベントが発火された際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]削除するイベントリスナーを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしイベントリスナーを指定しなかった場合には、そのイベントに紐づく全てのイベントリスナーが削除されます。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-navigator",
+      "path": "bindings/angular1/directives/navigator.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [
+        "\n<ons-navigator animation=\"slide\" var=\"app.navi\">\n  <ons-page>\n    <ons-toolbar>\n      <div class=\"center\">Title</div>\n    </ons-toolbar>\n    <p style=\"text-align: center\">\n      <ons-button modifier=\"light\" ng-click=\"app.navi.pushPage('page.html');\">Push</ons-button>\n    </p>\n  </ons-page>\n</ons-navigator>\n<ons-template id=\"page.html\">\n  <ons-page>\n    <ons-toolbar>\n      <div class=\"center\">Title</div>\n    </ons-toolbar>\n    <p style=\"text-align: center\">\n      <ons-button modifier=\"light\" ng-click=\"app.navi.popPage();\">Pop</ons-button>\n    </p>\n  </ons-page>\n</ons-template>"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    },
+    {
+      "name": "ons-navigator",
+      "path": "bindings/angular2/src/directives/ons-navigator.ts",
+      "description": "[en]Angular directive for `<ons-navigator>` component.[/en]\n[ja]`<ons-navigator>`要素のAngularディレクティブです。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular2",
+      "overwrite": "",
+      "directive": "OnsNavigator",
+      "selector": "ons-navigator",
+      "examples": [
+        "\n@Component({\n  selector: 'ons-page',\n  template: `\n    <ons-toolbar>\n      <div class=\"center\">Page</div>\n    </ons-toolbar>\n    <div class=\"content\">...</div>\n  `\n})\nclass DefaultPageComponent { }\n@Component({\n  selector: 'navigator-app',\n  template: `\n  <ons-navigator [page]=\"page\"></ons-navigator>\n  `\n})\nexport class AppComponent {\n  page = DefaultPageComponent\n}"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [
+    {
+      "name": "page",
+      "description": "\n[en]Type of the page component.[/en]\n[ja]ページコンポーネントのクラスを指定します。[/ja]",
+      "type": "{Type<any>}",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    }
+  ],
+  "outputs": []
+}

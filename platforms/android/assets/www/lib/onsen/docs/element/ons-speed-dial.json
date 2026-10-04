@@ -1,0 +1,285 @@
+{
+  "name": "ons-speed-dial",
+  "path": "core/src/elements/ons-speed-dial.js",
+  "category": "control",
+  "description": "[en]\n  Element that displays a Material Design Speed Dialog component. It is useful when there are more than one primary action that can be performed in a page.\n  The Speed dial looks like a `<ons-fab>` element but will expand a menu when tapped.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/speed-dial",
+  "examples": [
+    "\n<ons-speed-dial position=\"left bottom\">\n  <ons-fab>\n    <ons-icon icon=\"fa-twitter\"></ons-icon>\n  </ons-fab>\n  <ons-speed-dial-item>A</ons-speed-dial-item>\n  <ons-speed-dial-item>B</ons-speed-dial-item>\n  <ons-speed-dial-item>C</ons-speed-dial-item>\n</ons-speed-dial>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-speed-dial-item",
+      "description": "[en]The `<ons-speed-dial-item>` represents a menu item.[/en]\n   [ja]ons-speed-dial-itemコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-fab",
+      "description": "[en]ons-fab component[/en]\n   [ja]ons-fabコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "dYQYLg"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the component.[/en]\n[ja]このコンポーネントの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "ripple",
+      "type": null,
+      "description": "\n[en]If this attribute is defined, the button will have a ripple effect when tapped.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "position",
+      "type": "String",
+      "description": "\n[en]\n  Specify the vertical and horizontal position of the component.\n  I.e. to display it in the top right corner specify \"right top\".\n  Choose from \"right\", \"left\", \"top\" and \"bottom\".\n[/en]\n[ja]\n  この要素を表示する左右と上下の位置を指定します。\n  例えば、右上に表示する場合には\"right top\"を指定します。\n  左右と上下の位置の指定には、rightとleft、topとbottomがそれぞれ指定できます。\n[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "direction",
+      "type": "String",
+      "description": "\n[en]Specify the direction the items are displayed. Possible values are \"up\", \"down\", \"left\" and \"right\".[/en]\n[ja]\n  要素が表示する方向を指定します。up, down, left, rightが指定できます。\n[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "disabled",
+      "type": null,
+      "description": "\n[en]Specify if button should be disabled.[/en]\n[ja]無効化する場合に指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer the speed dial.[/en]\n[ja]このスピードダイアルを参照するための変数名をしてします。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-open",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"open\" event is fired.[/en]\n[ja]\"open\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-close",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"close\" event is fired.[/en]\n[ja]\"close\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [
+    {
+      "name": "open",
+      "params": [],
+      "description": "\n[en]Fired when the menu items are shown.[/en]\n[ja][/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "close",
+      "params": [],
+      "description": "\n[en]Fired when the menu items are hidden.[/en]\n[ja][/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "inline",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is inline or not.[/en]\n[ja]インライン要素の場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "visible",
+      "type": "Boolean",
+      "description": "\n[en]Whether the element is visible or not.[/en]\n[ja]要素が見える場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "show",
+      "params": [],
+      "returns": null,
+      "signature": "show()",
+      "description": "\n[en]Show the speed dial.[/en]\n[ja]Speed dialを表示します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "hide",
+      "params": [],
+      "returns": null,
+      "signature": "hide()",
+      "description": "\n[en]Hide the speed dial.[/en]\n[ja]Speed dialを非表示にします。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "showItems",
+      "params": [],
+      "returns": null,
+      "signature": "showItems()",
+      "description": "\n[en]Show the speed dial items.[/en]\n[ja]Speed dialの子要素を表示します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "hideItems",
+      "params": [],
+      "returns": null,
+      "signature": "hideItems()",
+      "description": "\n[en]Hide the speed dial items.[/en]\n[ja]Speed dialの子要素を非表示にします。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isOpen",
+      "params": [],
+      "returns": null,
+      "signature": "isOpen()",
+      "description": "\n[en]Returns whether the menu is open or not.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "toggle",
+      "params": [],
+      "returns": null,
+      "signature": "toggle()",
+      "description": "\n[en]Toggle visibility.[/en]\n[ja]Speed dialの表示非表示を切り替えます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "toggleItems",
+      "params": [],
+      "returns": null,
+      "signature": "toggleItems()",
+      "description": "\n[en]Toggle item visibility.[/en]\n[ja]Speed dialの子要素の表示非表示を切り替えます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしイベントリスナーが指定されなかった場合には、そのイベントに紐付いているイベントリスナーが全て削除されます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-speed-dial",
+      "path": "bindings/angular1/directives/speedDial.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

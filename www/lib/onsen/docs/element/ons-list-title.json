@@ -1,0 +1,26 @@
+{
+  "name": "ons-list-title",
+  "path": "core/src/elements/ons-list-title.js",
+  "category": "list",
+  "description": "[en]Represents a list title.[/en]\n[ja]リストのタイトルを表現します。[/ja]",
+  "deprecated": false,
+  "examples": [
+    "\n<ons-list-title>List Title</ons-list-title>\n<ons-list>\n  <ons-list-item>Item</ons-list-item>\n</ons-list>"
+  ],
+  "seealsos": [],
+  "guides": [],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Display a Material Design list title.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "codepens": [],
+  "attributes": [],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

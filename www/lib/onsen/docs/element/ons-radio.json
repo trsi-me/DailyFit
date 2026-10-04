@@ -1,0 +1,135 @@
+{
+  "name": "ons-radio",
+  "path": "core/src/elements/ons-radio.js",
+  "category": "form",
+  "description": "[en]\n  A radio button element. The component will automatically render as a Material Design radio button on Android devices.\n  Most attributes that can be used for a normal `<input type=\"radio\">` element can also be used on the `<ons-radio>` element.\n[/en]\n[ja][/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/radio",
+  "examples": [
+    "\n<ons-radio checked></ons-radio>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-select",
+      "description": "[en]The `<ons-select>` element is used to display a select box.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "ons-checkbox",
+      "description": "[en]The `<ons-checkbox>` element is used to display a checkbox.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "ons-switch",
+      "description": "[en]The `<ons-switch>` element is used to display a draggable toggle switch.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "ons-input",
+      "description": "[en]The `<ons-input>` element is used to display a text input.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "ons-search-input",
+      "description": "[en]The `<ons-search-input>` element is used to display a search input.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "ons-range",
+      "description": "[en]The `<ons-range>` element is used to display a range slider.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "theming.html#modifiers",
+      "description": "[en]More details about the `modifier` attribute[/en][ja]modifier属性の使い方[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Displays a Material Design radio button.[/en]\n  [ja][/ja]"
+    }
+  ],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "input-id",
+      "type": "String",
+      "description": "\n[en]Specify the \"id\" attribute of the inner `<input>` element. This is useful when using `<label for=\"...\">` elements.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "value",
+      "type": "String",
+      "description": "\n[en]The current value of the radio button.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "checked",
+      "type": "Boolean",
+      "description": "\n[en]Whether the radio button is checked or not.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "disabled",
+      "type": "Boolean",
+      "description": "\n[en]Whether the radio button is disabled or not.[/en]\n[ja]無効化されている場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "focus",
+      "params": [],
+      "returns": null,
+      "signature": "focus()",
+      "description": "\n[en]Focuses the radio button.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "blur",
+      "params": [],
+      "returns": null,
+      "signature": "blur()",
+      "description": "\n[en]Removes focus from the radio button.[/en]\n[ja][/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-radio",
+      "path": "bindings/angular1/directives/radio.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    },
+    {
+      "name": "ons-radio",
+      "path": "bindings/angular2/src/directives/ons-radio.ts",
+      "description": "[en]Angular directive for `<ons-radio>` component. You can use `[(ngModel)]` to synchronize the value of `[(ngModel)]` with the selected value.[/en]\n[ja]`<ons-radio>`要素のAngularディレクティブです。 `[(ngModel)]` を使用すると、 `[(ngModel)]` の値を選択された値と同期することができます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular2",
+      "overwrite": "",
+      "directive": "OnsRadio",
+      "selector": "ons-radio",
+      "examples": [
+        "\n<ons-radio value=\"Item A\" [(ngModel)]=\"selectedValue\"></ons-radio>\n<ons-radio value=\"Item B\" [(ngModel)]=\"selectedValue\"></ons-radio>\n<ons-radio value=\"Item C\" [(ngModel)]=\"selectedValue\"></ons-radio>"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

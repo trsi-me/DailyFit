@@ -1,0 +1,510 @@
+{
+  "name": "ons-tabbar",
+  "path": "core/src/elements/ons-tabbar/index.js",
+  "category": "tabbar",
+  "description": "[en]A component to display a tab bar on the bottom of a page. Used with `<ons-tab>` to manage pages using tabs.[/en]\n[ja]タブバーをページ下部に表示するためのコンポーネントです。ons-tabと組み合わせて使うことで、ページを管理できます。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/tabbar",
+  "examples": [
+    "\n<ons-tabbar>\n  <ons-tab\n    page=\"home.html\"\n    label=\"Home\"\n    active>\n  </ons-tab>\n  <ons-tab\n    page=\"settings.html\"\n    label=\"Settings\"\n    active>\n  </ons-tab>\n</ons-tabbar>\n<template id=\"home.html\">\n  ...\n</template>\n<template id=\"settings.html\">\n  ...\n</template>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-tab",
+      "description": "[en]The `<ons-tab>` component.[/en]\n   [ja]ons-tabコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-page",
+      "description": "[en]The `<ons-page>` component.[/en]\n   [ja]ons-pageコンポーネント[/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "fundamentals.html#managing-pages",
+      "description": "[en]Managing multiple pages.[/en]\n  [ja]複数のページを管理する[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]A tabbar in Material Design.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "autogrow",
+      "description": "[en]Tabs automatically grow depending on their content instead of having a fixed width.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "top-border",
+      "description": "[en]Shows a static border-bottom in tabs for iOS top tabbars.[/en]\n   [ja][/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "pGuDL"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "animation",
+      "type": "String",
+      "description": "\n[en]If this attribute is set to `\"none\"` the transitions will not be animated.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "none",
+      "initonly": false
+    },
+    {
+      "name": "animation-options",
+      "type": "Expression",
+      "description": "\n[en]Specify the animation's duration, timing and delay with an object literal. E.g. `{duration: 0.2, delay: 1, timing: 'ease-in'}`.[/en]\n[ja]アニメーション時のduration, timing, delayをオブジェクトリテラルで指定します。e.g. {duration: 0.2, delay: 1, timing: 'ease-in'}[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "position",
+      "type": "String",
+      "description": "\n[en]Tabbar's position. Available values are `\"bottom\"` and `\"top\"`. Use `\"auto\"` to choose position depending on platform (bottom for iOS flat design, top for Material Design).[/en]\n[ja]タブバーの位置を指定します。\"bottom\"もしくは\"top\"を選択できます。デフォルトは\"bottom\"です。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "bottom",
+      "initonly": true
+    },
+    {
+      "name": "swipeable",
+      "type": null,
+      "description": "\n[en]If this attribute is set the tab bar can be scrolled by drag or swipe.[/en]\n[ja]この属性がある時、タブバーをスワイプやドラッグで移動できるようになります。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "ignore-edge-width",
+      "type": "Number",
+      "description": "\n[en]Distance in pixels from both edges. Swiping on these areas will prioritize parent components such as `ons-splitter` or `ons-navigator`.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": "20",
+      "initonly": false
+    },
+    {
+      "name": "hide-tabs",
+      "type": null,
+      "description": "\n[en]Whether to hide the tabs.[/en]\n[ja]タブを非表示にする場合に指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "tab-border",
+      "type": null,
+      "description": "\n[en]If this attribute is set the tabs show a dynamic bottom border. Only works for iOS flat design since the border is always visible in Material Design.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the tabbar.[/en]\n[ja]タブバーの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this tab bar.[/en]\n[ja]このタブバーを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-reactive",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"reactive\" event is fired.[/en]\n[ja]\"reactive\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-prechange",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"prechange\" event is fired.[/en]\n[ja]\"prechange\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-postchange",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"postchange\" event is fired.[/en]\n[ja]\"postchange\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-init",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when a page's \"init\" event is fired.[/en]\n[ja]ページの\"init\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-show",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when a page's \"show\" event is fired.[/en]\n[ja]ページの\"show\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-hide",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when a page's \"hide\" event is fired.[/en]\n[ja]ページの\"hide\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-destroy",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when a page's \"destroy\" event is fired.[/en]\n[ja]ページの\"destroy\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [
+    {
+      "name": "prechange",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]\n   [ja]イベントオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.index",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Current index.[/en]\n   [ja]現在アクティブになっているons-tabのインデックスを返します。[/ja]"
+        },
+        {
+          "name": "event.tabItem",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Tab item object.[/en]\n   [ja]tabItemオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.cancel",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Call this function to cancel the change event.[/en]\n   [ja]この関数を呼び出すと、アクティブなタブの変更がキャンセルされます。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fires just before the tab is changed.[/en]\n[ja]アクティブなタブが変わる前に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "postchange",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]\n   [ja]イベントオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.index",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Current index.[/en]\n   [ja]現在アクティブになっているons-tabのインデックスを返します。[/ja]"
+        },
+        {
+          "name": "event.tabItem",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Tab item object.[/en]\n   [ja]tabItemオブジェクト。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fires just after the tab is changed.[/en]\n[ja]アクティブなタブが変わった後に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    },
+    {
+      "name": "reactive",
+      "params": [
+        {
+          "name": "event",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Event object.[/en]\n   [ja]イベントオブジェクト。[/ja]"
+        },
+        {
+          "name": "event.index",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Current index.[/en]\n   [ja]現在アクティブになっているons-tabのインデックスを返します。[/ja]"
+        },
+        {
+          "name": "event.tabItem",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Tab item object.[/en]\n   [ja]tabItemオブジェクト。[/ja]"
+        }
+      ],
+      "description": "\n[en]Fires if the already open tab is tapped again.[/en]\n[ja]すでにアクティブになっているタブがもう一度タップやクリックされた場合に発火します。[/ja]",
+      "examples": [],
+      "deprecated": false
+    }
+  ],
+  "properties": [
+    {
+      "name": "visible",
+      "type": "Boolean",
+      "description": "\n[en]Whether the tabbar is visible or not.[/en]\n[ja]タブバーが見える場合に`true`。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "swipeable",
+      "type": "Boolean",
+      "description": "\n[en]Enable swipe interaction.[/en]\n[ja]swipeableであればtrueを返します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "onSwipe",
+      "type": "Function",
+      "description": "\n[en]Hook called whenever the user slides the tabbar. It gets a decimal index and an animationOptions object as arguments.[/en]\n[ja][/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "setActiveTab",
+      "params": [
+        {
+          "name": "index",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Tab index.[/en]\n   [ja]タブのインデックスを指定します。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function that runs when the new page has loaded.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]If this option is \"none\", the transition won't slide.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.animationOptions",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Specify the animation's duration, delay and timing. E.g. `{duration: 0.2, delay: 0.4, timing: 'ease-in'}`.[/en]\n   [ja]アニメーション時のduration, delay, timingを指定します。e.g. {duration: 0.2, delay: 0.4, timing: 'ease-in'}[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]A promise that resolves to the new page element.[/en]\n   [ja][/ja]"
+      },
+      "signature": "setActiveTab(index, [options])",
+      "description": "\n[en]Show specified tab page. Animations and their options can be specified by the second parameter.[/en]\n[ja]指定したインデックスのタブを表示します。アニメーションなどのオプションを指定できます。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "setTabbarVisibility",
+      "params": [
+        {
+          "name": "visible",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "returns": null,
+      "signature": "setTabbarVisibility(visible)",
+      "description": "\n[en]Used to hide or show the tab bar.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "getActiveTabIndex",
+      "params": [],
+      "returns": {
+        "type": "Number",
+        "description": "[en]The index of the currently active tab.[/en]\n   [ja]現在アクティブになっているタブのインデックスを返します。[/ja]"
+      },
+      "signature": "getActiveTabIndex()",
+      "description": "\n[en]Returns tab index on current active tab. If active tab is not found, returns -1.[/en]\n[ja]現在アクティブになっているタブのインデックスを返します。現在アクティブなタブがない場合には-1を返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "on",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]このイベントが発火された際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "on(eventName, listener)",
+      "description": "\n[en]Add an event listener.[/en]\n[ja]イベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "once",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]イベントが発火した際に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "once(eventName, listener)",
+      "description": "\n[en]Add an event listener that's only triggered once.[/en]\n[ja]一度だけ呼び出されるイベントリスナーを追加します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "off",
+      "params": [
+        {
+          "name": "eventName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of the event.[/en]\n   [ja]イベント名を指定します。[/ja]"
+        },
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function to execute when the event is triggered.[/en]\n   [ja]削除するイベントリスナーを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "off(eventName, [listener])",
+      "description": "\n[en]Remove an event listener. If the listener is not specified all listeners for the event type will be removed.[/en]\n[ja]イベントリスナーを削除します。もしイベントリスナーを指定しなかった場合には、そのイベントに紐づく全てのイベントリスナーが削除されます。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-tabbar",
+      "path": "bindings/angular1/directives/tabbar.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    },
+    {
+      "name": "ons-tabbar",
+      "path": "bindings/angular2/src/directives/ons-tabbar.ts",
+      "description": "[en]Angular directive for `<ons-tabbar>` component.[/en]\n[ja]`<ons-tabbar>`要素のためのディレクティブです。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular2",
+      "overwrite": "",
+      "directive": "OnsTabbar",
+      "selector": "ons-tabbar",
+      "examples": [
+        "\n@Component({\n  selector: 'ons-page',\n  template: `\n    <ons-toolbar>\n      <div class=\"center\">Page</div>\n    </ons-toolbar>\n    <div class=\"content\">...</div>\n  `\n})\nclass PageComponent {\n}\n@Component({\n  selector: 'app',\n  template: `\n  <ons-tabbar swipeable (swipe)=\"onSwipe($event)\">\n    <div class=\"tabbar__content\"></div>\n    <div class=\"tabbar\">\n      <ons-tab label=\"Page1\" icon=\"ion-home\" [page]=\"page\" active></ons-tab>\n      <ons-tab label=\"Page2\" icon=\"ion-help\" [page]=\"page\"></ons-tab>\n      <ons-tab label=\"Page3\" icon=\"ion-stop\" [page]=\"page\"></ons-tab>\n    </div>\n  </ons-tabbar>\n  `\n})\nexport class AppComponent {\n  page = PageComponent\n  onSwipe(event) {\n    console.log(event);\n  }\n}"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    },
+    {
+      "name": "ons-tab",
+      "path": "bindings/angular2/src/directives/ons-tabbar.ts",
+      "description": "[en]Angular directive for `<ons-tab>` component.[/en]\n[ja]`<ons-tab>`要素のためのディレクティブです。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular2",
+      "overwrite": "",
+      "directive": "OnsTab",
+      "selector": "ons-tab",
+      "examples": [
+        "\n@Component({\n  selector: 'ons-page',\n  template: `\n    <ons-toolbar>\n      <div class=\"center\">Page</div>\n    </ons-toolbar>\n    <div class=\"content\">...</div>\n  `\n})\nclass PageComponent {\n}\n@Component({\n  selector: 'app',\n  template: `\n  <ons-tabbar>\n    <div class=\"tabbar__content\"></div>\n    <div class=\"tabbar\">\n      <ons-tab label=\"Page1\" icon=\"ion-home\" [page]=\"page\" active></ons-tab>\n      <ons-tab label=\"Page2\" icon=\"ion-help\" [page]=\"page\"></ons-tab>\n      <ons-tab label=\"Page3\" icon=\"ion-stop\" [page]=\"page\"></ons-tab>\n    </div>\n  </ons-tabbar>\n  `\n})\nexport class AppComponent {\n  page = PageComponent\n}"
+      ],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [
+    {
+      "name": "page",
+      "description": "\n[en]Specify the page component that is displayed when the tab is active.[/en]\n[ja]読み込むページコンポーネントを指定します。[/ja]",
+      "type": "{Type<any>}",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "swipe",
+      "description": "\n[en]Triggers when the tabbar is swiped.[/en]\n[ja]`<ons-tabbar>`がスワイプされた時に発火します。[/ja]",
+      "type": "",
+      "deprecated": false,
+      "extensionOf": "angular2"
+    }
+  ]
+}

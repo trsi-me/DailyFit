@@ -1,0 +1,626 @@
+{
+  "name": "ons",
+  "path": "core/src/ons/index.js",
+  "category": "util",
+  "description": "\n[ja]Onsen UIで利用できるグローバルなオブジェクトです。[/ja]\n[en]A global object that's used in Onsen UI. [/en]",
+  "deprecated": false,
+  "examples": [],
+  "seealsos": [],
+  "guides": [],
+  "codepens": [],
+  "events": [],
+  "properties": [],
+  "methods": [
+    {
+      "name": "isReady",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": "[en]Will be true if Onsen UI is initialized.[/en]\n   [ja]初期化されているかどうかを返します。[/ja]"
+      },
+      "signature": "isReady()",
+      "description": "\n[en]Returns true if Onsen UI is initialized.[/en]\n[ja]Onsen UIがすでに初期化されているかどうかを返すメソッドです。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isWebView",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": "[en]Will be true if the app is running in Cordova.[/en]\n   [ja]Cordovaで実行されている場合にtrueになります。[/ja]"
+      },
+      "signature": "isWebView()",
+      "description": "\n[en]Returns true if running inside Cordova.[/en]\n[ja]Cordovaで実行されているかどうかを返すメソッドです。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "ready",
+      "params": [
+        {
+          "name": "callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function that executes after Onsen UI has been initialized.[/en]\n   [ja]Onsen UIが初期化が完了した後に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "ready(callback)",
+      "description": "\n[ja]アプリの初期化に利用するメソッドです。渡された関数は、Onsen UIの初期化が終了している時点で必ず呼ばれます。[/ja]\n[en]Method used to wait for app initialization. Waits for `DOMContentLoaded` and `deviceready`, when necessary, before executing the callback.[/en]",
+      "deprecated": false
+    },
+    {
+      "name": "setDefaultDeviceBackButtonListener",
+      "params": [
+        {
+          "name": "listener",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function that executes when device back button is pressed. Must be called on `ons.ready`.[/en]\n   [ja]デバイスのバックボタンが押された時に実行される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "setDefaultDeviceBackButtonListener(listener)",
+      "description": "\n[en]Set default handler for device back button.[/en]\n[ja]デバイスのバックボタンのためのデフォルトのハンドラを設定します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "disableDeviceBackButtonHandler",
+      "params": [],
+      "returns": null,
+      "signature": "disableDeviceBackButtonHandler()",
+      "description": "\n[en]Disable device back button event handler. Must be called on `ons.ready`.[/en]\n[ja]デバイスのバックボタンのイベントを受け付けないようにします。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "enableDeviceBackButtonHandler",
+      "params": [],
+      "returns": null,
+      "signature": "enableDeviceBackButtonHandler()",
+      "description": "\n[en]Enable device back button event handler. Must be called on `ons.ready`.[/en]\n[ja]デバイスのバックボタンのイベントを受け付けるようにします。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "enableAutoStatusBarFill",
+      "params": [],
+      "returns": null,
+      "signature": "enableAutoStatusBarFill()",
+      "description": "\n[en]Enable status bar fill feature on iOS7 and above (except for iPhone X). Must be called before `ons.ready`.[/en]\n[ja]iOS7以上（iPhone Xは除く）で、ステータスバー部分の高さを自動的に埋める処理を有効にします。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "disableAutoStatusBarFill",
+      "params": [],
+      "returns": null,
+      "signature": "disableAutoStatusBarFill()",
+      "description": "\n[en]Disable status bar fill feature on iOS7 and above (except for iPhone X). Must be called before `ons.ready`.[/en]\n[ja]iOS7以上（iPhone Xは除く）で、ステータスバー部分の高さを自動的に埋める処理を無効にします。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "mockStatusBar",
+      "params": [],
+      "returns": null,
+      "signature": "mockStatusBar()",
+      "description": "\n[en]Creates a static element similar to iOS status bar. Only useful for browser testing. Must be called before `ons.ready`.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "disableAnimations",
+      "params": [],
+      "returns": null,
+      "signature": "disableAnimations()",
+      "description": "\n[en]Disable all animations. Could be handy for testing and older devices.[/en]\n[ja]アニメーションを全て無効にします。テストの際に便利です。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "enableAnimations",
+      "params": [],
+      "returns": null,
+      "signature": "enableAnimations()",
+      "description": "\n[en]Enable animations (default).[/en]\n[ja]アニメーションを有効にします。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "disableAutoStyling",
+      "params": [],
+      "returns": null,
+      "signature": "disableAutoStyling()",
+      "description": "\n[en]Disable automatic styling.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "enableAutoStyling",
+      "params": [],
+      "returns": null,
+      "signature": "enableAutoStyling()",
+      "description": "\n[en]Enable automatic styling based on OS (default).[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "disableIconAutoPrefix",
+      "params": [],
+      "returns": null,
+      "signature": "disableIconAutoPrefix()",
+      "description": "\n[en]Disable adding `fa-` prefix automatically to `ons-icon` classes. Useful when including custom icon packs.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "forcePlatformStyling",
+      "params": [
+        {
+          "name": "platform",
+          "type": "string",
+          "isOptional": false,
+          "description": "New platform to style the elements."
+        }
+      ],
+      "returns": null,
+      "signature": "forcePlatformStyling(platform)",
+      "description": "\n[en]Refresh styling for the given platform. Only useful for demos. Use `ons.platform.select(...)` instead for development and production.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "preload",
+      "params": [
+        {
+          "name": "templatePaths",
+          "type": "String|Array",
+          "isOptional": false,
+          "description": "[en]Set of HTML file paths containing 'ons-page' elements.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise that resolves when all the templates are cached.[/en]\n   [ja][/ja]"
+      },
+      "signature": "preload(templatePaths)",
+      "description": "\n[en]Separated files need to be requested on demand and this can slightly delay pushing new pages. This method requests and caches templates for later use.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "createElement",
+      "params": [
+        {
+          "name": "template",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Either an HTML file path, a `<template>` id or an HTML string such as `'<div id=\"foo\">hoge</div>'`.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.append",
+          "type": "Boolean|HTMLElement",
+          "isOptional": false,
+          "description": "[en]Whether or not the element should be automatically appended to the DOM.  Defaults to `false`. If `true` value is given, `document.body` will be used as the target.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.insertBefore",
+          "type": "HTMLElement",
+          "isOptional": false,
+          "description": "[en]Reference node that becomes the next sibling of the new node (`options.append` element).[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "HTMLElement|Promise",
+        "description": "[en]If the provided template was an inline HTML string, it returns the new element. Otherwise, it returns a promise that resolves to the new element.[/en]\n   [ja][/ja]"
+      },
+      "signature": "createElement(template, options)",
+      "description": "\n[en]Create a new element from a template. Both inline HTML and external files are supported although the return value differs.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "createPopover",
+      "params": [
+        {
+          "name": "page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page name. Can be either an HTML file or a <template> containing a <ons-dialog> component.[/en]\n   [ja]pageのURLか、もしくは`<template>`で宣言したテンプレートのid属性の値を指定できます。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.parentScope",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parent scope of the dialog. Used to bind models and access scope methods from the dialog.[/en]\n   [ja]ダイアログ内で利用する親スコープを指定します。ダイアログからモデルやスコープのメソッドにアクセスするのに使います。このパラメータはAngularJSバインディングでのみ利用できます。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise object that resolves to the popover component object.[/en]\n   [ja]ポップオーバーのコンポーネントオブジェクトを解決するPromiseオブジェクトを返します。[/ja]"
+      },
+      "signature": "createPopover(page, [options])",
+      "description": "\n[en]Create a popover instance from a template.[/en]\n[ja]テンプレートからポップオーバーのインスタンスを生成します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "createDialog",
+      "params": [
+        {
+          "name": "page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page name. Can be either an HTML file or an `<template>` containing a <ons-dialog> component.[/en]\n   [ja]pageのURLか、もしくは`<template>`で宣言したテンプレートのid属性の値を指定できます。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise object that resolves to the dialog component object.[/en]\n   [ja]ダイアログのコンポーネントオブジェクトを解決するPromiseオブジェクトを返します。[/ja]"
+      },
+      "signature": "createDialog(page, [options])",
+      "description": "\n[en]Create a dialog instance from a template.[/en]\n[ja]テンプレートからダイアログのインスタンスを生成します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "createAlertDialog",
+      "params": [
+        {
+          "name": "page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page name. Can be either an HTML file or an `<template>` containing a <ons-alert-dialog> component.[/en]\n   [ja]pageのURLか、もしくは`<template>`で宣言したテンプレートのid属性の値を指定できます。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise object that resolves to the alert dialog component object.[/en]\n   [ja]ダイアログのコンポーネントオブジェクトを解決するPromiseオブジェクトを返します。[/ja]"
+      },
+      "signature": "createAlertDialog(page, [options])",
+      "description": "\n[en]Create a alert dialog instance from a template.[/en]\n[ja]テンプレートからアラートダイアログのインスタンスを生成します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "openActionSheet",
+      "params": [
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.buttons",
+          "type": "Array",
+          "isOptional": false,
+          "description": "[en]Represent each button of the action sheet following the specified order. Every item can be either a string label or an object containing `label`, `icon` and `modifier` properties.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.title",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Optional title for the action sheet.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.destructive",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Optional index of the \"destructive\" button (only for iOS). It can be specified in the button array as well.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.cancelable",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]Whether the action sheet can be canceled by tapping on the background mask or not.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.modifier",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Modifier attribute of the action sheet. E.g. `'destructive'`.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.maskColor",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Optionally change the background mask color.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.id",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]The element's id attribute.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.class",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]The element's class attribute.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Will resolve when the action sheet is closed. The resolve value is either the index of the tapped button or -1 when canceled.[/en]\n   [ja][/ja]"
+      },
+      "signature": "openActionSheet(options)",
+      "description": "\n[en]Shows an instant Action Sheet and lets the user choose an action.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "resolveLoadingPlaceholder",
+      "params": [
+        {
+          "name": "page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page name. Can be either an HTML file or a `<template>` id.[/en]\n   [ja]pageのURLか、もしくは`<template>`で宣言したテンプレートのid属性の値を指定できます。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "resolveLoadingPlaceholder(page)",
+      "description": "\n[en]If no page is defined for the `ons-loading-placeholder` attribute it will wait for this method being called before loading the page.[/en]\n[ja]ons-loading-placeholderの属性値としてページが指定されていない場合は、ページロード前に呼ばれるons.resolveLoadingPlaceholder処理が行われるまで表示されません。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "getScriptPage",
+      "params": [],
+      "returns": {
+        "type": "HTMLElement",
+        "description": "[en]Returns the corresponding page element.[/en]\n   [ja][/ja]"
+      },
+      "signature": "getScriptPage()",
+      "description": "\n[en]Access the last created page from the current `script` scope. Only works inside `<script></script>` tags that are direct children of `ons-page` element. Use this to add lifecycle hooks to a page.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "bootstrap",
+      "params": [
+        {
+          "name": "moduleName",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]AngularJS module name.[/en]\n   [ja]Angular.jsでのモジュール名[/ja]"
+        },
+        {
+          "name": "dependencies",
+          "type": "Array",
+          "isOptional": false,
+          "description": "[en]List of AngularJS module dependencies.[/en]\n   [ja]依存するAngular.jsのモジュール名の配列[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Object",
+        "description": "[en]An AngularJS module object.[/en]\n   [ja]AngularJSのModuleオブジェクトを表します。[/ja]"
+      },
+      "extensionOf": "angular1",
+      "signature": "bootstrap([moduleName, [dependencies]])",
+      "description": "\n[ja]Onsen UIの初期化を行います。Angular.jsのng-app属性を利用すること無しにOnsen UIを読み込んで初期化してくれます。[/ja]\n[en]Initialize Onsen UI. Can be used to load Onsen UI without using the <code>ng-app</code> attribute from AngularJS.[/en]",
+      "deprecated": false
+    },
+    {
+      "name": "findParentComponentUntil",
+      "params": [
+        {
+          "name": "name",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Name of component, i.e. 'ons-page'.[/en]\n   [ja]コンポーネント名を指定します。例えばons-pageなどを指定します。[/ja]"
+        },
+        {
+          "name": "dom",
+          "type": "Object/jqLite/HTMLElement",
+          "isOptional": false,
+          "description": "[en]$event, jqLite or HTMLElement object.[/en]\n   [ja]$eventオブジェクト、jqLiteオブジェクト、HTMLElementオブジェクトのいずれかを指定できます。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Object",
+        "description": "[en]Component object. Will return null if no component was found.[/en]\n   [ja]コンポーネントのオブジェクトを返します。もしコンポーネントが見つからなかった場合にはnullを返します。[/ja]"
+      },
+      "extensionOf": "angular1",
+      "signature": "findParentComponentUntil(name, [dom])",
+      "description": "\n[en]Find parent component object of <code>dom</code> element.[/en]\n[ja]指定されたdom引数の親要素をたどってコンポーネントを検索します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "findComponent",
+      "params": [
+        {
+          "name": "selector",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]CSS selector[/en]\n   [ja]CSSセレクターを指定します。[/ja]"
+        },
+        {
+          "name": "dom",
+          "type": "HTMLElement",
+          "isOptional": false,
+          "description": "[en]DOM element to search from.[/en]\n   [ja]検索対象とするDOM要素を指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Object/null",
+        "description": "[en]Component object. Will return null if no component was found.[/en]\n   [ja]コンポーネントのオブジェクトを返します。もしコンポーネントが見つからなかった場合にはnullを返します。[/ja]"
+      },
+      "extensionOf": "angular1",
+      "signature": "findComponent(selector, [dom])",
+      "description": "\n[en]Find component object using CSS selector.[/en]\n[ja]CSSセレクタを使ってコンポーネントのオブジェクトを検索します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "compile",
+      "params": [
+        {
+          "name": "dom",
+          "type": "HTMLElement",
+          "isOptional": false,
+          "description": "[en]Element to compile.[/en]\n   [ja]コンパイルする要素を指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "extensionOf": "angular1",
+      "signature": "compile(dom)",
+      "description": "\n[en]Compile Onsen UI components.[/en]\n[ja]通常のHTMLの要素をOnsen UIのコンポーネントにコンパイルします。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "createElement",
+      "params": [
+        {
+          "name": "template",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Either an HTML file path, an `<ons-template>` id or an HTML string such as `'<div id=\"foo\">hoge</div>'`.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.append",
+          "type": "Boolean|HTMLElement",
+          "isOptional": false,
+          "description": "[en]Whether or not the element should be automatically appended to the DOM.  Defaults to `false`. If `true` value is given, `document.body` will be used as the target.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.insertBefore",
+          "type": "HTMLElement",
+          "isOptional": false,
+          "description": "[en]Reference node that becomes the next sibling of the new node (`options.append` element).[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.parentScope",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parent scope of the element. Used to bind models and access scope methods from the element. Requires append option.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "HTMLElement|Promise",
+        "description": "[en]If the provided template was an inline HTML string, it returns the new element. Otherwise, it returns a promise that resolves to the new element.[/en]\n   [ja][/ja]"
+      },
+      "extensionOf": "angular1",
+      "signature": "createElement(template, [options])",
+      "description": "\n[en]Create a new element from a template. Both inline HTML and external files are supported although the return value differs. If the element is appended it will also be compiled by AngularJS (otherwise, `ons.compile` should be manually used).[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "createAlertDialog",
+      "params": [
+        {
+          "name": "page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page name. Can be either an HTML file or an <ons-template> containing a <ons-alert-dialog> component.[/en]\n   [ja]pageのURLか、もしくはons-templateで宣言したテンプレートのid属性の値を指定できます。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.parentScope",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parent scope of the dialog. Used to bind models and access scope methods from the dialog.[/en]\n   [ja]ダイアログ内で利用する親スコープを指定します。ダイアログからモデルやスコープのメソッドにアクセスするのに使います。このパラメータはAngularJSバインディングでのみ利用できます。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise object that resolves to the alert dialog component object.[/en]\n   [ja]ダイアログのコンポーネントオブジェクトを解決するPromiseオブジェクトを返します。[/ja]"
+      },
+      "extensionOf": "angular1",
+      "signature": "createAlertDialog(page, [options])",
+      "description": "\n[en]Create a alert dialog instance from a template. This method will be deprecated in favor of `ons.createElement`.[/en]\n[ja]テンプレートからアラートダイアログのインスタンスを生成します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "createDialog",
+      "params": [
+        {
+          "name": "page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page name. Can be either an HTML file or an <ons-template> containing a <ons-dialog> component.[/en]\n   [ja]pageのURLか、もしくはons-templateで宣言したテンプレートのid属性の値を指定できます。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.parentScope",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parent scope of the dialog. Used to bind models and access scope methods from the dialog.[/en]\n   [ja]ダイアログ内で利用する親スコープを指定します。ダイアログからモデルやスコープのメソッドにアクセスするのに使います。このパラメータはAngularJSバインディングでのみ利用できます。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise object that resolves to the dialog component object.[/en]\n   [ja]ダイアログのコンポーネントオブジェクトを解決するPromiseオブジェクトを返します。[/ja]"
+      },
+      "extensionOf": "angular1",
+      "signature": "createDialog(page, [options])",
+      "description": "\n[en]Create a dialog instance from a template. This method will be deprecated in favor of `ons.createElement`.[/en]\n[ja]テンプレートからダイアログのインスタンスを生成します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "createPopover",
+      "params": [
+        {
+          "name": "page",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Page name. Can be either an HTML file or an <ons-template> containing a <ons-dialog> component.[/en]\n   [ja]pageのURLか、もしくはons-templateで宣言したテンプレートのid属性の値を指定できます。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクト。[/ja]"
+        },
+        {
+          "name": "options.parentScope",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parent scope of the dialog. Used to bind models and access scope methods from the dialog.[/en]\n   [ja]ダイアログ内で利用する親スコープを指定します。ダイアログからモデルやスコープのメソッドにアクセスするのに使います。このパラメータはAngularJSバインディングでのみ利用できます。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Promise object that resolves to the popover component object.[/en]\n   [ja]ポップオーバーのコンポーネントオブジェクトを解決するPromiseオブジェクトを返します。[/ja]"
+      },
+      "extensionOf": "angular1",
+      "signature": "createPopover(page, [options])",
+      "description": "\n[en]Create a popover instance from a template. This method will be deprecated in favor of `ons.createElement`.[/en]\n[ja]テンプレートからポップオーバーのインスタンスを生成します。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "objects": [
+    {
+      "name": "ons",
+      "path": "bindings/angular1/js/onsen.js",
+      "description": "\n[ja]Onsen UIで利用できるグローバルなオブジェクトです。このオブジェクトは、AngularJSのスコープから参照することができます。 [/ja]\n[en]A global object that's used in Onsen UI. This object can be reached from the AngularJS scope.[/en]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ]
+}

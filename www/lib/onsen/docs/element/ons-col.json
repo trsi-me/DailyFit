@@ -1,0 +1,56 @@
+{
+  "name": "ons-col",
+  "path": "core/src/elements/ons-col.js",
+  "category": "grid",
+  "description": "[en]Represents a column in the grid system. Use with `<ons-row>` to layout components.[/en]\n[ja]グリッドシステムにて列を定義します。ons-rowとともに使用し、コンポーネントのレイアウトに利用します。[/ja]",
+  "deprecated": false,
+  "note": "\n[en]For Android 4.3 and earlier, and iOS6 and earlier, when using mixed alignment with ons-row and ons-column, they may not be displayed correctly. You can use only one alignment.[/en]\n[ja]Android 4.3以前、もしくはiOS 6以前のOSの場合、ons-rowとons-columnを組み合わせた場合に描画が崩れる場合があります。[/ja]",
+  "examples": [
+    "\n<ons-row>\n  <ons-col width=\"50px\"><ons-icon icon=\"fa-twitter\"></ons-icon></ons-col>\n  <ons-col>Text</ons-col>\n</ons-row>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-row",
+      "description": "[en]The `<ons-row>` component is the parent of `<ons-col>`.[/en]\n   [ja]ons-rowコンポーネント[/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "theming.html",
+      "description": "[en]Layouting guide[/en][ja]レイアウト機能[/ja]"
+    }
+  ],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": true,
+      "id": "GgujC"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "vertical-align",
+      "type": "String",
+      "description": "\n[en]Vertical alignment of the column. Valid values are \"top\", \"center\", and \"bottom\".[/en]\n[ja]縦の配置を指定する。\"top\", \"center\", \"bottom\"のいずれかを指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "width",
+      "type": "String",
+      "description": "\n[en]The width of the column. Valid values are css width values (\"10%\", \"50px\").[/en]\n[ja]カラムの横幅を指定する。パーセントもしくはピクセルで指定します（10%や50px）。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

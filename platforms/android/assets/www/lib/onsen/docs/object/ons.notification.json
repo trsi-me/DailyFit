@@ -1,0 +1,295 @@
+{
+  "name": "ons.notification",
+  "path": "core/src/ons/notification.js",
+  "category": "dialog",
+  "description": "\n[en]\n  Utility methods to create different kinds of notifications. There are three methods available:\n  * `ons.notification.alert()`\n  * `ons.notification.confirm()`\n  * `ons.notification.prompt()`\n  * `ons.notification.toast()`\n  It will automatically display a Material Design dialog on Android devices.\n[/en]\n[ja]いくつかの種類のアラートダイアログを作成するためのユーティリティメソッドを収めたオブジェクトです。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/notification",
+  "examples": [
+    "\nons.notification.alert('Hello, world!');\nons.notification.confirm('Are you ready?')\n  .then(\n    function(answer) {\n      if (answer === 1) {\n        ons.notification.alert('Let\\'s go!');\n      }\n    }\n  );\nons.notification.prompt('How old are ?')\n  .then(\n    function(age) {\n      ons.notification.alert('You are ' + age + ' years old.');\n    }\n  );"
+  ],
+  "seealsos": [],
+  "guides": [],
+  "codepens": [],
+  "events": [],
+  "properties": [],
+  "methods": [
+    {
+      "name": "alert",
+      "params": [
+        {
+          "name": "message",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Notification message. This argument is optional but if it's not defined either `options.message` or `options.messageHTML` must be defined instead.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクトです。[/ja]"
+        },
+        {
+          "name": "options.message",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Notification message.[/en]\n   [ja]アラートダイアログに表示する文字列を指定します。[/ja]"
+        },
+        {
+          "name": "options.messageHTML",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Notification message in HTML.[/en]\n   [ja]アラートダイアログに表示するHTMLを指定します。[/ja]"
+        },
+        {
+          "name": "options.buttonLabels",
+          "type": "String | Array",
+          "isOptional": false,
+          "description": "[en]Labels for the buttons. Default is `\"OK\"`.[/en]\n   [ja]確認ボタンのラベルを指定します。\"OK\"がデフォルトです。[/ja]"
+        },
+        {
+          "name": "options.primaryButtonIndex",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Index of primary button. Default is the last one.[/en]\n   [ja]プライマリボタンのインデックスを指定します。デフォルトは 0 です。[/ja]"
+        },
+        {
+          "name": "options.cancelable",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]Whether the dialog is cancelable or not. Default is `false`. If the dialog is cancelable it can be closed by clicking the background or pressing the Android back button.[/en]\n   [ja]ダイアログがキャンセル可能かどうかを指定します。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `none` and `fade`. Default is `fade`.[/en]\n   [ja]アラートダイアログを表示する際のアニメーション名を指定します。\"none\", \"fade\"のいずれかを指定できます。[/ja]"
+        },
+        {
+          "name": "options.id",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]The `<ons-alert-dialog>` element's ID.[/en]\n   [ja]ons-alert-dialog要素のID。[/ja]"
+        },
+        {
+          "name": "options.class",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]The `<ons-alert-dialog>` element's class.[/en]\n   [ja]ons-alert-dialog要素のclass。[/ja]"
+        },
+        {
+          "name": "options.title",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Dialog title. Default is `\"Alert\"`.[/en]\n   [ja]アラートダイアログの上部に表示するタイトルを指定します。\"Alert\"がデフォルトです。[/ja]"
+        },
+        {
+          "name": "options.modifier",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Modifier for the dialog.[/en]\n   [ja]アラートダイアログのmodifier属性の値を指定します。[/ja]"
+        },
+        {
+          "name": "options.maskColor",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Color of the background mask. Default is \"rgba(0, 0, 0, 0.2)\" (\"rgba(0, 0, 0, 0.3)\" for Material).[/en]\n   [ja]背景のマスクの色を指定します。\"rgba(0, 0, 0, 0.2)\"がデフォルト値です。[/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function that executes after dialog has been closed.[/en]\n   [ja]アラートダイアログが閉じられた時に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Will resolve to the index of the button that was pressed or `-1` when canceled.[/en]\n   [ja][/ja]"
+      },
+      "signature": "alert(message [, options] | options)",
+      "description": "\n[en]\n  Display an alert dialog to show the user a message.\n  The content of the message can be either simple text or HTML.\n  It can be called in the following ways:\n  ```\n  ons.notification.alert(message, options);\n  ons.notification.alert(options);\n  ```\n  Must specify either `message` or `messageHTML`.\n[/en]\n[ja]\n  ユーザーへメッセージを見せるためのアラートダイアログを表示します。\n  表示するメッセージは、テキストかもしくはHTMLを指定できます。\n  このメソッドの引数には、options.messageもしくはoptions.messageHTMLのどちらかを必ず指定する必要があります。\n[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "confirm",
+      "params": [
+        {
+          "name": "message",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Notification message. This argument is optional but if it's not defined either `options.message` or `options.messageHTML` must be defined instead.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]"
+        },
+        {
+          "name": "options.buttonLabels",
+          "type": "Array",
+          "isOptional": false,
+          "description": "[en]Labels for the buttons. Default is `[\"Cancel\", \"OK\"]`.[/en]\n   [ja]ボタンのラベルの配列を指定します。[\"Cancel\", \"OK\"]がデフォルトです。[/ja]"
+        },
+        {
+          "name": "options.primaryButtonIndex",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Index of primary button. Default is the last one.[/en]\n   [ja]プライマリボタンのインデックスを指定します。デフォルトは 1 です。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Will resolve to the index of the button that was pressed or `-1` when canceled.[/en]\n   [ja][/ja]"
+      },
+      "signature": "confirm(message [, options] | options)",
+      "description": "\n[en]\n  Display a dialog to ask the user for confirmation. Extends `alert()` parameters.\n  The default button labels are `\"Cancel\"` and `\"OK\"` but they can be customized.\n  It can be called in the following ways:\n  ```\n  ons.notification.confirm(message, options);\n  ons.notification.confirm(options);\n  ```\n  Must specify either `message` or `messageHTML`.\n[/en]\n[ja]\n  ユーザに確認を促すダイアログを表示します。\n  デオルとのボタンラベルは、\"Cancel\"と\"OK\"ですが、これはこのメソッドの引数でカスタマイズできます。\n  このメソッドの引数には、options.messageもしくはoptions.messageHTMLのどちらかを必ず指定する必要があります。\n[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "prompt",
+      "params": [
+        {
+          "name": "message",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Notification message. This argument is optional but if it's not defined either `options.message` or `options.messageHTML` must be defined instead.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクトです。[/ja]"
+        },
+        {
+          "name": "options.buttonLabels",
+          "type": "String | Array",
+          "isOptional": false,
+          "description": "[en]Labels for the buttons. Default is `\"OK\"`.[/en]\n   [ja]確認ボタンのラベルを指定します。\"OK\"がデフォルトです。[/ja]"
+        },
+        {
+          "name": "options.primaryButtonIndex",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Index of primary button. Default is the last one.[/en]\n   [ja]プライマリボタンのインデックスを指定します。デフォルトは 0 です。[/ja]"
+        },
+        {
+          "name": "options.placeholder",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Placeholder for the text input.[/en]\n   [ja]テキスト欄のプレースホルダに表示するテキストを指定します。[/ja]"
+        },
+        {
+          "name": "options.defaultValue",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Default value for the text input.[/en]\n   [ja]テキスト欄のデフォルトの値を指定します。[/ja]"
+        },
+        {
+          "name": "options.inputType",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Type of the input element (`password`, `date`...). Default is `text`.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.autofocus",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]Autofocus the input element. Default is `true`. In Cordova, `KeyboardDisplayRequiresUserAction` in `config.xml` must be `false` to activate this feature.[/en]\n   [ja]input要素に自動的にフォーカスするかどうかを指定します。デフォルトはtrueです。Cordova環境では、この機能を有効にするためには `config.xml` で `KeyboardDisplayRequiresUserAction` を `false` に設定する必要があります。[/ja]"
+        },
+        {
+          "name": "options.submitOnEnter",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]Submit automatically when enter is pressed. Default is `true`.[/en]\n   [ja]Enterが押された際にそのformをsubmitするかどうかを指定します。デフォルトはtrueです。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Will resolve to the input value when the dialog is closed or `null` when canceled.[/en]\n   [ja][/ja]"
+      },
+      "signature": "prompt(message [, options] | options)",
+      "description": "\n[en]\n  Display a dialog with a prompt to ask the user a question. Extends `alert()` parameters.\n  It can be called in the following ways:\n  ```\n  ons.notification.prompt(message, options);\n  ons.notification.prompt(options);\n  ```\n  Must specify either `message` or `messageHTML`.\n[/en]\n[ja]\n  ユーザーに入力を促すダイアログを表示します。\n  このメソッドの引数には、options.messageもしくはoptions.messageHTMLのどちらかを必ず指定する必要があります。\n[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "toast",
+      "params": [
+        {
+          "name": "message",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Toast message. This argument is optional but if it's not defined then `options.message` must be defined instead.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": "[en]Parameter object.[/en]\n   [ja]オプションを指定するオブジェクトです。[/ja]"
+        },
+        {
+          "name": "options.message",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Notification message.[/en]\n   [ja]トーストに表示する文字列を指定します。[/ja]"
+        },
+        {
+          "name": "options.buttonLabel",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Label for the button.[/en]\n   [ja]確認ボタンのラベルを指定します。[/ja]"
+        },
+        {
+          "name": "options.animation",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Animation name. Available animations are `none`, `fade`, `ascend`, `lift` and `fall`. Default is `ascend` for Android and `lift` for iOS.[/en]\n   [ja]トーストを表示する際のアニメーション名を指定します。\"none\", \"fade\", \"ascend\", \"lift\", \"fall\"のいずれかを指定できます。[/ja]"
+        },
+        {
+          "name": "options.timeout",
+          "type": "Number",
+          "isOptional": false,
+          "description": "[en]Number of miliseconds where the toast is visible before hiding automatically.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.force",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If `true`, the toast skips the notification queue and is shown immediately. Defaults to `false`.[/en]\n   [ja][/ja]"
+        },
+        {
+          "name": "options.id",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]The `<ons-toast>` element's ID.[/en]\n   [ja]ons-toast要素のID。[/ja]"
+        },
+        {
+          "name": "options.class",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]The `<ons-toast>` element's class.[/en]\n   [ja]ons-toast要素のclass。[/ja]"
+        },
+        {
+          "name": "options.modifier",
+          "type": "String",
+          "isOptional": false,
+          "description": "[en]Modifier for the element.[/en]\n   [ja]トーストのmodifier属性の値を指定します。[/ja]"
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": "[en]Function that executes after toast has been hidden.[/en]\n   [ja]トーストが閉じられた時に呼び出される関数オブジェクトを指定します。[/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Will resolve when the toast is hidden.[/en]\n   [ja][/ja]"
+      },
+      "signature": "toast(message [, options] | options)",
+      "description": "\n[en]\n  Display a simple notification toast with an optional button that can be used for simple actions.\n  It can be called in the following ways:\n  ```\n  ons.notification.toast(message, options);\n  ons.notification.toast(options);\n  ```\n[/en]\n[ja][/ja]",
+      "deprecated": false
+    }
+  ],
+  "objects": []
+}

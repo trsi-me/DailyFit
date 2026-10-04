@@ -1,0 +1,43 @@
+{
+  "name": "ons-keyboard-active",
+  "path": "bindings/angular1/directives/keyboard.js",
+  "category": "form",
+  "description": "[en]\n  Conditionally display content depending on if the software keyboard is visible or hidden.\n  This component requires cordova and that the com.ionic.keyboard plugin is installed.\n[/en]\n[ja]\n  ソフトウェアキーボードが表示されているかどうかで、コンテンツを表示するかどうかを切り替えることが出来ます。\n  このコンポーネントは、Cordovaやcom.ionic.keyboardプラグインを必要とします。\n[/ja]",
+  "deprecated": false,
+  "extensionOf": "angular1",
+  "examples": [
+    "\n<div ons-keyboard-active>\n  This will only be displayed if the software keyboard is open.\n</div>\n<div ons-keyboard-inactive>\n  There is also a component that does the opposite.\n</div>"
+  ],
+  "seealsos": [],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [],
+  "attributes": [
+    {
+      "name": "ons-keyboard-active",
+      "type": null,
+      "description": "\n[en]The content of tags with this attribute will be visible when the software keyboard is open.[/en]\n[ja]この属性がついた要素は、ソフトウェアキーボードが表示された時に初めて表示されます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "ons-keyboard-inactive",
+      "type": null,
+      "description": "\n[en]The content of tags with this attribute will be visible when the software keyboard is hidden.[/en]\n[ja]この属性がついた要素は、ソフトウェアキーボードが隠れている時のみ表示されます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

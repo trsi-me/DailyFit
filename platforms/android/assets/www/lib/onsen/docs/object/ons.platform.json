@@ -1,0 +1,321 @@
+{
+  "name": "ons.platform",
+  "path": "core/src/ons/platform.js",
+  "category": "util",
+  "description": "\n[en]Utility methods to detect current platform.[/en]\n[ja]現在実行されているプラットフォームを検知するためのユーティリティメソッドを収めたオブジェクトです。[/ja]",
+  "deprecated": false,
+  "examples": [],
+  "seealsos": [],
+  "guides": [],
+  "codepens": [],
+  "events": [],
+  "properties": [],
+  "methods": [
+    {
+      "name": "select",
+      "params": [
+        {
+          "name": "platform",
+          "type": "string",
+          "isOptional": false,
+          "description": "Name of the platform.\n   [en]Possible values are: \"opera\", \"firefox\", \"safari\", \"chrome\", \"ie\", \"android\", \"blackberry\", \"ios\" or \"wp\".[/en]\n   [ja]\"opera\", \"firefox\", \"safari\", \"chrome\", \"ie\", \"android\", \"blackberry\", \"ios\", \"wp\"のいずれかを指定します。[/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "select(platform)",
+      "description": "\n[en]Sets the platform used to render the elements. Useful for testing.[/en]\n[ja]要素を描画するために利用するプラットフォーム名を設定します。テストに便利です。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isWebView",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isWebView()",
+      "description": "\n[en]Returns whether app is running in Cordova.[/en]\n[ja]Cordova内で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isIPhone",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isIPhone()",
+      "description": "\n[en]Returns whether the device is iPhone.[/en]\n[ja]iPhone上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isIPhoneX",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isIPhoneX()",
+      "description": "\n[en]Returns whether the device is iPhone X, XS, XS Max, XR, 11, 11 Pro, 11 Pro Max, 12 Mini, 12, 12 Pro or 12 Pro Max.[/en]\n[ja]iPhone X や XS、XS Max、XR、11、11 Pro、11 Pro Max、12 Mini、12、12 Pro、または12 Pro Max上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isIPad",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isIPad()",
+      "description": "\n[en]Returns whether the device is iPad.[/en]\n[ja]iPad上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isIOS",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isIOS([forceActualPlatform])",
+      "description": "\n[en]Returns whether the OS is iOS. By default will return manually selected platform if it is set.[/en]\n[ja]iOS上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isIOS7above",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isIOS7above()",
+      "description": "\n[en]Returns whether the iOS version is 7 or above.[/en]\n[ja]iOS7以上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isIPadOS",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isIPadOS()",
+      "description": "\n[en]Returns whether the OS is iPadOS.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isIOSSafari",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isIOSSafari()",
+      "description": "\n[en]Returns whether app is running in iOS Safari.[/en]\n[ja]iOS Safariで実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isWKWebView",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isWKWebView()",
+      "description": "\n[en]Returns whether app is running in WKWebView.[/en]\n[ja]WKWebViewで実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isAndroidPhone",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isAndroidPhone()",
+      "description": "\n[en]Returns whether the device is Android phone.[/en]\n[ja]Android携帯上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isAndroidTablet",
+      "params": [],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isAndroidTablet()",
+      "description": "\n[en]Returns whether the device is Android tablet.[/en]\n[ja]Androidタブレット上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isAndroid",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isAndroid([forceActualPlatform])",
+      "description": "\n[en]Returns whether the OS is Android. By default will return manually selected platform if it is set.[/en]\n[ja]Android上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isWP",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isWP([forceActualPlatform])",
+      "description": "\n[en]Returns whether the OS is Windows phone. By default will return manually selected platform if it is set.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isBlackBerry",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isBlackBerry([forceActualPlatform])",
+      "description": "\n[en]Returns whether the device is BlackBerry. By default will return manually selected platform if it is set.[/en]\n[ja]BlackBerry上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isOpera",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isOpera([forceActualPlatform])",
+      "description": "\n[en]Returns whether the browser is Opera. By default will return manually selected platform if it is set.[/en]\n[ja]Opera上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isFirefox",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isFirefox([forceActualPlatform])",
+      "description": "\n[en]Returns whether the browser is Firefox. By default will return manually selected platform if it is set.[/en]\n[ja]Firefox上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isSafari",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isSafari([forceActualPlatform])",
+      "description": "\n[en]Returns whether the browser is Safari. By default will return manually selected platform if it is set.[/en]\n[ja]Safari上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isChrome",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isChrome([forceActualPlatform])",
+      "description": "\n[en]Returns whether the browser is Chrome. By default will return manually selected platform if it is set.[/en]\n[ja]Chrome上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isIE",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isIE([forceActualPlatform])",
+      "description": "\n[en]Returns whether the browser is Internet Explorer. By default will return manually selected platform if it is set.[/en]\n[ja]Internet Explorer上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "isEdge",
+      "params": [
+        {
+          "name": "forceActualPlatform",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]If true, selected platform is ignored and the actual platform is returned.[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": {
+        "type": "Boolean",
+        "description": ""
+      },
+      "signature": "isEdge([forceActualPlatform])",
+      "description": "\n[en]Returns whether the browser is Edge. By default will return manually selected platform if it is set.[/en]\n[ja]Edge上で実行されているかどうかを返します。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "objects": []
+}

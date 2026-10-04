@@ -1,0 +1,55 @@
+{
+  "name": "ons-speed-dial-item",
+  "path": "core/src/elements/ons-speed-dial-item.js",
+  "category": "control",
+  "description": "[en]\n  This component displays the child elements of the Material Design Speed dial component.\n[/en]\n[ja]\n  Material DesignのSpeed dialの子要素を表現する要素です。\n[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/speed-dial",
+  "examples": [
+    "\n<ons-speed-dial position=\"left bottom\">\n  <ons-fab>\n    <ons-icon icon=\"fa-twitter\"></ons-icon>\n  </ons-fab>\n  <ons-speed-dial-item>A</ons-speed-dial-item>\n  <ons-speed-dial-item>B</ons-speed-dial-item>\n  <ons-speed-dial-item>C</ons-speed-dial-item>\n</ons-speed-dial>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-speed-dial",
+      "description": "[en]The `<ons-speed-dial>` component.[/en]\n   [ja]ons-speed-dialコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-fab",
+      "description": "[en]ons-fab component[/en]\n   [ja]ons-fabコンポーネント[/ja]"
+    }
+  ],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "dYQYLg"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "modifier",
+      "type": "String",
+      "description": "\n[en]The appearance of the component.[/en]\n[ja]このコンポーネントの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "ripple",
+      "type": null,
+      "description": "\n[en]If this attribute is defined, the button will have a ripple effect when tapped.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

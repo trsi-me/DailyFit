@@ -1,0 +1,145 @@
+{
+  "name": "ons-toolbar",
+  "path": "core/src/elements/ons-toolbar.js",
+  "category": "page",
+  "description": "[en]\n  Toolbar component that can be used with navigation.\n  Left, center and right containers can be specified by class names.\n  This component will automatically display as a Material Design toolbar when running on Android devices.\n[/en]\n[ja]ナビゲーションで使用するツールバー用コンポーネントです。クラス名により、左、中央、右のコンテナを指定できます。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/toolbar",
+  "examples": [
+    "\n<ons-page>\n  <ons-toolbar>\n    <div class=\"left\">\n      <ons-back-button>\n        Back\n      </ons-back-button>\n    </div>\n    <div class=\"center\">\n      Title\n    </div>\n    <div class=\"right\">\n      <ons-toolbar-button>\n        <ons-icon icon=\"md-menu\"></ons-icon>\n      </ons-toolbar-button>\n    </div>\n  </ons-toolbar>\n</ons-page>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-bottom-toolbar",
+      "description": "[en]The `<ons-bottom-toolbar>` displays a toolbar on the bottom of the page.[/en]\n   [ja]ons-bottom-toolbarコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-back-button",
+      "description": "[en]The `<ons-back-button>` component displays a back button inside the toolbar.[/en]\n   [ja]ons-back-buttonコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-toolbar-button",
+      "description": "[en]The `<ons-toolbar-button>` component displays a toolbar button inside the toolbar.[/en]\n   [ja]ons-toolbar-buttonコンポーネント[/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "compilation.html#toolbar-compilation",
+      "description": "[en]Adding a toolbar[/en][ja]ツールバーの追加[/ja]"
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "material",
+      "description": "[en]Material Design toolbar.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "transparent",
+      "description": "[en]Transparent toolbar.[/en]\n   [ja]透明な背景を持つツールバーを表示します。[/ja]"
+    },
+    {
+      "name": "cover-content",
+      "description": "[en]Displays the toolbar on top of the page's content. Should be combined with `transparent` modifier.[/en]\n   [ja][/ja]"
+    },
+    {
+      "name": "noshadow",
+      "description": "[en]Toolbar without shadow.[/en]\n   [ja]ツールバーに影を付けずに表示します。[/ja]"
+    }
+  ],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "aHmGL"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "inline",
+      "type": null,
+      "description": "\n[en]Display the toolbar as an inline element.[/en]\n[ja]ツールバーをインラインに置きます。スクロール領域内にそのまま表示されます。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "static",
+      "type": null,
+      "description": "\n[en]Static toolbars are not animated by `ons-navigator` when pushing or popping pages. This can be useful to improve performance in some situations.[/en]\n[ja][/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "modifier",
+      "type": null,
+      "description": "\n[en]The appearance of the toolbar.[/en]\n[ja]ツールバーの表現を指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this toolbar.[/en]\n[ja]このツールバーを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [],
+  "properties": [],
+  "methods": [
+    {
+      "name": "setVisibility",
+      "params": [
+        {
+          "name": "visible",
+          "type": "Boolean",
+          "isOptional": false,
+          "description": "[en]Set to true to show the toolbar, false to hide it[/en]\n   [ja][/ja]"
+        }
+      ],
+      "returns": null,
+      "signature": "setVisibility(visible)",
+      "description": "\n[en]Shows the toolbar if visible is true, otherwise hides it.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "show",
+      "params": [],
+      "returns": null,
+      "signature": "show()",
+      "description": "\n[en]Show the toolbar.[/en]\n[ja][/ja]",
+      "deprecated": false
+    },
+    {
+      "name": "hide",
+      "params": [],
+      "returns": null,
+      "signature": "hide()",
+      "description": "\n[en]Hide the toolbar.[/en]\n[ja][/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-toolbar",
+      "path": "bindings/angular1/directives/toolbar.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}

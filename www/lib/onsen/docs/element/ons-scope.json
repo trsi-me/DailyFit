@@ -1,0 +1,22 @@
+{
+  "name": "ons-scope",
+  "path": "bindings/angular1/directives/scope.js",
+  "category": "util",
+  "description": "[en]All child elements using the \"var\" attribute will be attached to the scope of this element.[/en]\n[ja]\"var\"属性を使っている全ての子要素のviewオブジェクトは、この要素のAngularJSスコープに追加されます。[/ja]",
+  "deprecated": false,
+  "extensionOf": "angular1",
+  "examples": [
+    "\n<ons-list>\n  <ons-list-item ons-scope ng-repeat=\"item in items\">\n    <ons-carousel var=\"carousel\">\n      <ons-carousel-item ng-click=\"carousel.next()\">\n        {{ item }}\n      </ons-carousel-item>\n      </ons-carousel-item ng-click=\"carousel.prev()\">\n        ...\n      </ons-carousel-item>\n    </ons-carousel>\n  </ons-list-item>\n</ons-list>"
+  ],
+  "seealsos": [],
+  "guides": [],
+  "modifiers": [],
+  "codepens": [],
+  "attributes": [],
+  "events": [],
+  "properties": [],
+  "methods": [],
+  "elements": [],
+  "inputs": [],
+  "outputs": []
+}

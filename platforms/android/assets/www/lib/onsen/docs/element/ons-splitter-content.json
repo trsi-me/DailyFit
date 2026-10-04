@@ -1,0 +1,130 @@
+{
+  "name": "ons-splitter-content",
+  "path": "core/src/elements/ons-splitter-content.js",
+  "category": "menu",
+  "description": "[en]\n  The `<ons-splitter-content>` element is used as a child element of `<ons-splitter>`.\n  It contains the main content of the page while `<ons-splitter-side>` contains the list.\n[/en]\n[ja]ons-splitter-content要素は、ons-splitter要素の子要素として利用します。[/ja]",
+  "deprecated": false,
+  "tutorial": "vanilla/Reference/splitter",
+  "examples": [
+    "\n<ons-splitter>\n  <ons-splitter-content>\n    ...\n  </ons-splitter-content>\n  <ons-splitter-side side=\"left\" width=\"80%\" collapse>\n    ...\n  </ons-splitter-side>\n</ons-splitter>"
+  ],
+  "seealsos": [
+    {
+      "name": "ons-splitter",
+      "description": "[en]The `<ons-splitter>` component is the parent element.[/en]\n  [ja]ons-splitterコンポーネント[/ja]"
+    },
+    {
+      "name": "ons-splitter-side",
+      "description": "[en]The `<ons-splitter-side>` component contains the menu.[/en]\n  [ja]ons-splitter-sideコンポーネント[/ja]"
+    }
+  ],
+  "guides": [
+    {
+      "name": "fundamentals.html#managing-pages",
+      "description": "[en]Managing multiple pages.[/en]\n  [ja]複数のページを管理する[/ja]"
+    }
+  ],
+  "modifiers": [],
+  "codepens": [
+    {
+      "isWide": false,
+      "id": "rOQOML"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "page",
+      "type": "String",
+      "description": "\n[en]\n  The url of the content page. If this attribute is used the content will be loaded from a `<template>` tag or a remote file.\n  It is also possible to put `<ons-page>` element as a child of the element.\n[/en]\n[ja]ons-splitter-content要素に表示するページのURLを指定します。[/ja]",
+      "deprecated": false,
+      "required": false,
+      "default": null,
+      "initonly": false
+    },
+    {
+      "name": "var",
+      "type": "String",
+      "description": "\n[en]Variable name to refer this splitter content.[/en]\n[ja]このスプリッターコンポーネントを参照するための名前を指定します。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    },
+    {
+      "name": "ons-destroy",
+      "type": "Expression",
+      "description": "\n[en]Allows you to specify custom behavior when the \"destroy\" event is fired.[/en]\n[ja]\"destroy\"イベントが発火された時の挙動を独自に指定できます。[/ja]",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "required": false,
+      "default": null,
+      "initonly": true
+    }
+  ],
+  "events": [],
+  "properties": [
+    {
+      "name": "page",
+      "type": "HTMLElement",
+      "description": "\n[en]The page to load in the splitter content.[/en]\n[ja]この要素内に表示するページを指定します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    },
+    {
+      "name": "pageLoader",
+      "type": "Function",
+      "description": "\n[en]Page element loaded in the splitter content.[/en]\n[ja]この要素内に表示するページを指定します。[/ja]",
+      "initonly": false,
+      "deprecated": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "load",
+      "params": [
+        {
+          "name": "page,",
+          "type": "String",
+          "isOptional": false,
+          "description": "[options]\n   [en]Page URL. Can be either an HTML document or an `<template>` id.[/en]\n   [ja]pageのURLか、`<template>`で宣言したテンプレートのid属性の値を指定します。[/ja]"
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "isOptional": false,
+          "description": ""
+        },
+        {
+          "name": "options.callback",
+          "type": "Function",
+          "isOptional": false,
+          "description": ""
+        }
+      ],
+      "returns": {
+        "type": "Promise",
+        "description": "[en]Resolves to the new `<ons-page>` element[/en]\n   [ja]`<ons-page>`要素を解決するPromiseオブジェクトを返します。[/ja]"
+      },
+      "signature": "load(page, [options])",
+      "description": "\n[en]Show the page specified in `page` in the content.[/en]\n[ja]指定したURLをメインページを読み込みます。[/ja]",
+      "deprecated": false
+    }
+  ],
+  "elements": [
+    {
+      "name": "ons-splitter-content",
+      "path": "bindings/angular1/directives/splitterContent.js",
+      "description": "",
+      "deprecated": false,
+      "extensionOf": "angular1",
+      "overwrite": "",
+      "examples": [],
+      "seealsos": [],
+      "guides": [],
+      "codepens": []
+    }
+  ],
+  "inputs": [],
+  "outputs": []
+}
