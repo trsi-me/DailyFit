@@ -56,7 +56,7 @@ INSERT INTO exercises (name_ar, name_en, description, calories_per_minute, durat
 ('ركوب الدراجة', 'Cycling', 'ركوب دراجة لمدة 25 دقيقة', 8, 25),
 ('السباحة', 'Swimming', 'سباحة لمدة 20 دقيقة', 12, 20);
 
--- إدراج بيانات تجريبية للمستخدم (كلمة المرور: 123456)
+-- إدراج بيانات تجريبية للمستخدم
 -- ملاحظة: في الإنتاج يجب استخدام تشفير كلمات المرور
 INSERT INTO users (name, email, password, phone, weight, height, age, daily_calories) VALUES
-('مستخدم تجريبي', 'test@example.com', '123456', '0123456789', 75.5, 175.0, 25, 2200);
+('مستخدم تجريبي', 'test@example.com', '', '0123456789', 75.5, 175.0, 25, 2200);
